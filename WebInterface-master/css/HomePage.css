@@ -1,0 +1,48 @@
+@import url(https://fonts.googleapis.com/css?family=Karma);
+/* Start Header CSS*/
+body {
+ margin: 0;
+ padding: 0;
+ background: #A6BCD5;
+}
+
+header div, main {
+ margin: 0 auto;
+ padding: 0 1em 0 1em;
+}
+
+header {
+ background: #2F3F86;
+ width: 100%;
+ top: 0;
+ position: fixed;
+}
+
+main {
+ padding: 5em 1em 1em 1em;
+}
+
+header a {
+font-family: 'Karma', serif;
+ text-decoration: none;
+ color: white;
+}
+header a:hover{
+  color: #D3D3D3;
+}
+
+header ul {
+ float: left;
+ list-style-type: none;
+}
+
+.logout {
+ float: right;
+ list-style-type: none;
+}
+
+header li {
+   display: inline;
+   padding-right: 15px;
+}
+/* End Header CSS */
