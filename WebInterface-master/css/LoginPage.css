@@ -1,0 +1,51 @@
+@import url(https://fonts.googleapis.com/css?family=Karma);
+body {
+  background: #A6BCD5;
+}
+/* Outer Box */
+.login {
+  width: 360px;
+  padding: 8% 0 0;
+  margin: auto;
+}
+/* Inside the box */
+.form {
+  position: relative;
+  background: #FFFFFF;
+  max-width: 360px;
+  margin: 0 auto 100px;
+  padding: 45px;
+  text-align: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+/* The text boxes */
+.form input {
+  font-family: 'Karma', serif;
+  background: #f2f2f2;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+/* On hover over text boxes */
+.form input:hover{
+  background: #D9D9D9;
+}
+/* The Login Button */
+.form button {
+  font-family: 'Karma', serif;
+  background: #A6BCD5;
+  width: 100%;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 16px;
+  outline: 0;
+  border: 0;
+}
+/* When hovered over the login button */
+.form button:hover,.form button:active,.form button:focus {
+  background: #2F3F86;
+  cursor: pointer;
+}
