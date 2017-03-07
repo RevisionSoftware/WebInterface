@@ -36,36 +36,13 @@ header ul {
  list-style-type: none;
 }
 
+.logout {
+ float: right;
+ list-style-type: none;
+}
+
 header li {
    display: inline;
    padding-right: 15px;
 }
 /* End Header CSS */
-
-
-/* ==================================== */
-/* Begin download data page */
-.routeType, .wasteType, .dateRange {
-	padding-left: 40px;
-}
-
-
-
-
-/* Route Number */
-.routeType ul li {
-	list-style: none;
-	display: inline;
-	font-family: arial, serif;
-}
-
-.wasteType ul li, .dateRange ul li {
-	list-style: none;
-	font-family: arial, serif;
-}
-
-
-
-
-/* End download data page */
-/* ==================================== */
