@@ -6,6 +6,11 @@ body {
  background: #A6BCD5;
 }
 
+.center {
+    text-align: center;
+}
+
+
 header div, main {
  margin: 0 auto;
  padding: 0 1em 0 1em;
