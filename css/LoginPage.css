@@ -34,7 +34,7 @@ body {
   background: #D9D9D9;
 }
 /* The Login Button */
-#login {
+.form button {
   font-family: 'Karma', serif;
   background: #A6BCD5;
   width: 100%;
@@ -45,7 +45,7 @@ body {
   border: 0;
 }
 /* When hovered over the login button */
-#login:hover,#login:active,#login:focus {
+.form button:hover,.form button:active,.form button:focus {
   background: #2F3F86;
   cursor: pointer;
 }
