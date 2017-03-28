@@ -17,40 +17,35 @@
       <li><a href="../html/HomePage.html">HOME</a></li>
       <li><a href="../html/DownloadPage.html">DOWNLOAD</a></li>
       <li><a href="../html/Householdlookup.html">HOUSEHOLD LOOKUP</a></li>
-      <li><a href="#">VIEW DATA</a></li>
-
+      <li><a href="../html/Viewdata.html">VIEW DATA</a></li>
   </ul>
   <ul class="logout">
     <li><a href="#">LOGOUT</a></li>
 </ul>
 </div>
   </header>
-  <!-- END HEADER: MUST BE ON ALL PAGES -->
 
 <main>
   <div class="center">
   <!-- Main Page HTML goes here -->
-  <h1> THIS IS THE DOWNLOAD HOUSEHOLD DATA PAGE </h1>
+  <h1> DELETE PAGE </h1>
+  <h1> Delete Data Components here </h1>
+  <form>
+  <fieldset><legend>Product Information</legend>
+  <label for= "pID">Calibration_ID:</label>
+  <input type="text" name="pID" id="pID" size="15" maxlength= "20" placeholder="Enter Calibration_ID" autofocus required> <br>
+  <br>
+  <label for="name">RFID_Tag: </label>
+  <input type="text" name="name" id="name" size="15" maxlength="20" placeholder="Enter RFID_tag" required> <br>
+  <br>
 
-   <!-- houshold data Checkboxes -->
-   <div class = "household">
-  <h3> <u>Options: </u></h3>
-	<form action="">
-		<ul>
-			<li><input type="checkbox" name="data" value="1">  View Data in Browser </li>
-			<li><input type="checkbox" name="data" value="2">  Download Data File </li>
-			<input type="submit"> </br></li>
-		</ul>
-	</form>
-   </div>
-    </br></br>
-<div class = "bottomBar">
-</br></br></br></br>
-</br></br></br></br>
+  <INPUT type="submit" id="submit" value="Submit"/>
+  <INPUT type="submit" id="submit" value="Clear"/>
+  </fieldset>
+  <br>
+  </form>
 </div>
-
 </main>
-</div>
 </body>
 
 </html>
