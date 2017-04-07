@@ -1,0 +1,35 @@
+@import url(https://fonts.googleapis.com/css?family=Karma);
+body{
+    text-align: center;
+}
+.Outer-Form {
+  background: #FFFFFF;
+  max-width: 500px;
+  margin: 0 auto 100px;
+  padding: 45px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+button{
+  font-family: 'Karma', serif;
+  background: #A6BCD5;
+  width: 50%;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 16px;
+  outline: 0;
+  border: 0;
+}
+button:hover{
+  background: #2F3F86;
+  cursor: pointer;
+}
+table, th, td {
+  border-collapse: collapse;
+  border: 1px solid black;
+    text-align: center;
+    margin: auto;
+}
+tr:nth-child(even){
+  background-color: #f2f2f2
+}
