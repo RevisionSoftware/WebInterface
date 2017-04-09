@@ -24,7 +24,7 @@
   </ul>
   <ul class="logout">
     <li><a href="../php/AdminPage.php">ADMINISTRATION</a></li>
-    <li><a href="../php/LoginPage.html">LOGOUT</a></li>
+    <li><a href="../html/LoginPage.html">LOGOUT</a></li>
 </ul>
 </div>
 </header>
@@ -61,37 +61,11 @@ echo("</table>");
 }
 ?>
 <br>
-<button id="myBtn">Add User</button>
-<!-- The Modal -->
-<div id="myModal" class="modal">
-  <!-- Modal content -->
-  <div class="modal-content">
-    <div class="modal-header">
-      <span class="close">&times;</span>
-      <h2>Add User</h2>
-    </div>
-    <div class="modal-body">
-      <div class="centered"
-      <form method="POST">
-        <label>Username: <input type="text" name="Username" tile="Username"></label><br>
-        <label>First Name: <input type="text" name="FName" tile="First Name"></label><br>
-        <label>Last Name: <input type="text" name="LName" tile="Last Name"></label><br>
-        <label>Password: <input type="password" name="Password1"></label><br>
-        <label>Re-Enter Password: <input type="password" name="Password2"></label><br>
-        <select>
-            <option value="Team">Standard</option>
-            <option value="Admin">Admin</option>
-          </select><br>
-         <button type="submit" name"submit">Submit</button>
-      </form>
-    </div>
-    </div>
-  </div>
-</div>
+<input type="button" onclick="location.href='../php/AddUser.php'" value="Add User">
 
 
 </div>
+
 </main>
-<script type="text/javascript" src="../JS/Modal.js"></script>
 </body>
 </html>
