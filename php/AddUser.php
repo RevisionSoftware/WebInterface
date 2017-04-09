@@ -22,7 +22,7 @@
   </ul>
   <ul class="logout">
     <li><a href="../php/AdminPage.php">ADMINISTRATION</a></li>
-    <li><a href="../html/LoginPage.html">LOGOUT</a></li>
+    <li><a href="../html/LoginPage.php">LOGOUT</a></li>
 </ul>
 </div>
 </header>
@@ -120,11 +120,6 @@ function CreateUser(){
     //Hash password if they match
     if(strlen($errorString) > 0){
     echo "<p style=\"text-align:center; color:red; width:100%; font-size:12px;\">" . $errorString . "</p>";
-<<<<<<< Updated upstream
-    }
-=======
-}
->>>>>>> Stashed changes
 
     if(strlen($errorString) == 0){
       // Creates the User
@@ -142,6 +137,7 @@ function CreateUser(){
       else {
         echo "Error: " . $CreateUserQuery . "<br>" . mysqli_error($connection);
       }
+}
 }
 }
 
