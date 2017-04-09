@@ -8,7 +8,6 @@
 
      <link rel="stylesheet" type="text/css" href="../css/HomePage.css">
      <link rel="stylesheet" type="text/css" href="../css/AdminPage.css">
-     <link rel="stylesheet" type="text/css" href="../css/Modal.css">
 
 </head>
 
@@ -24,7 +23,7 @@
   </ul>
   <ul class="logout">
     <li><a href="../php/AdminPage.php">ADMINISTRATION</a></li>
-    <li><a href="../html/LoginPage.html">LOGOUT</a></li>
+    <li><a href="../php/LoginPage.php">LOGOUT</a></li>
 </ul>
 </div>
 </header>
@@ -61,7 +60,7 @@ echo("</table>");
 }
 ?>
 <br>
-<input type="button" onclick="location.href='../php/AddUser.php'" value="Add User">
+<input type="submit" onclick="location.href='../php/AddUser.php'" value="Add User">
 
 
 </div>
