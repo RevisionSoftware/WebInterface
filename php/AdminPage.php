@@ -8,6 +8,10 @@
 
      <link rel="stylesheet" type="text/css" href="../css/HomePage.css">
      <link rel="stylesheet" type="text/css" href="../css/AdminPage.css">
+<<<<<<< Updated upstream
+=======
+     <link rel="stylesheet" type="text/css" href="../css/Modal.css">
+>>>>>>> Stashed changes
 
 </head>
 
@@ -23,7 +27,11 @@
   </ul>
   <ul class="logout">
     <li><a href="../php/AdminPage.php">ADMINISTRATION</a></li>
+<<<<<<< Updated upstream
     <li><a href="../php/LoginPage.php">LOGOUT</a></li>
+=======
+    <li><a href="../html/LoginPage.html">LOGOUT</a></li>
+>>>>>>> Stashed changes
 </ul>
 </div>
 </header>
@@ -60,7 +68,11 @@ echo("</table>");
 }
 ?>
 <br>
+<<<<<<< Updated upstream
 <input type="submit" onclick="location.href='../php/AddUser.php'" value="Add User">
+=======
+<input type="button" onclick="location.href='../php/AddUser.php'" value="Add User">
+>>>>>>> Stashed changes
 
 
 </div>

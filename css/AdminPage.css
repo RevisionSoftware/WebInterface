@@ -10,7 +10,12 @@ body{
   padding: 45px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+<<<<<<< Updated upstream
 input[type='submit']{
+=======
+
+button{
+>>>>>>> Stashed changes
   font-family: 'Karma', serif;
   background: #A6BCD5;
   width: 50%;
@@ -20,7 +25,11 @@ input[type='submit']{
   outline: 0;
   border: 0;
 }
+<<<<<<< Updated upstream
 input[type='submit']:hover{
+=======
+button:hover{
+>>>>>>> Stashed changes
   background: #2F3F86;
   cursor: pointer;
 }
