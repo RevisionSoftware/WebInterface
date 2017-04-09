@@ -34,7 +34,7 @@ body {
   background: #D9D9D9;
 }
 /* The Login Button */
-.form button {
+.form input[type='submit'] {
   font-family: 'Karma', serif;
   background: #A6BCD5;
   width: 100%;
@@ -45,7 +45,7 @@ body {
   border: 0;
 }
 /* When hovered over the login button */
-.form button:hover,.form button:active,.form button:focus {
+.form input[type='submit']:hover,.form input[type='submit']:active,.form input[type='submit']:focus {
   background: #2F3F86;
   cursor: pointer;
 }
