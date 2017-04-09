@@ -34,7 +34,7 @@ $CIDU = htmlspecialchars($CID);
 $query = "DELETE FROM Calibration WHERE Calibration_ID = '$CIDU'";
 
 //Variable to store query result
-$Qresult = mysqli_query($db, $query);
+$Qresult = mysqli_query($connection, $query);
 
 if(!$Qresult)//if statement for checking query
   {

@@ -33,7 +33,6 @@
    <!-- Item ID section  -->
 <form>
  <input type="button" onclick="location.href='../html/ViewCalibrationData.php'" value="Calibration Table" id="submit">
-
       </p>
     </form>
       </div>

@@ -28,11 +28,11 @@ $t1ID = $_POST['CID'];
 $t1ID = stripcslashes($t1ID);
 $t1IDU = htmlspecialchars($t1ID);
 
-$t2ID = $_POST['RFID'];
+$t2ID = $_POST['TruckID'];
 $t2ID = stripcslashes($t2ID);
 $t2IDU = htmlspecialchars($t2ID);
 
-$t3ID = $_POST['TruckID'];
+$t3ID = $_POST['RFID'];
 $t3ID = stripcslashes($t3ID);
 $t3IDU = htmlspecialchars($t3ID);
 
