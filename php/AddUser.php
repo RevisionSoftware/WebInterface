@@ -120,7 +120,11 @@ function CreateUser(){
     //Hash password if they match
     if(strlen($errorString) > 0){
     echo "<p style=\"text-align:center; color:red; width:100%; font-size:12px;\">" . $errorString . "</p>";
+<<<<<<< Updated upstream
     }
+=======
+}
+>>>>>>> Stashed changes
 
     if(strlen($errorString) == 0){
       // Creates the User
