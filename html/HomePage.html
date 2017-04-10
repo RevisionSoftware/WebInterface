@@ -4,8 +4,9 @@
 
 <head>
   <meta charset="UTF-8">
-    <title>Home Page</title>
+    <title>Tables: ADD/DELETE</title>
      <link rel="stylesheet" type="text/css" href="../css/HomePage.css">
+     <link rel="stylesheet" type="text/css" href="../css/DownloadPage.css">
 </head>
 
 <body>
@@ -19,7 +20,8 @@
       <li><a href="../html/Viewdata.html">VIEW DATA</a></li>
   </ul>
   <ul class="logout">
-    <li><a href="../html/LoginPage.html">LOGOUT</a></li>
+    <li><a href="../php/AdminPage.php">ADMINISTRATION</a></li>
+    <li><a href="../php/LoginPage.php">LOGOUT</a></li>
 </ul>
 </div>
   </header>
@@ -28,9 +30,18 @@
 <main>
   <div class="center">
   <!-- Main Page HTML goes here -->
-  <h1> THIS IS THE HOME PAGE </h1>
-<p>WOULD LIKE TO KNOW WHAT THE BEHAVIORAL TEAM WOULD LIKE TO SEE HERE RIGHT AFTER THE LOG IN</p>
-
+  <h1> Tables: ADD/DELETE </h1>
+  <div class="btn-group">
+<button class = "button" type="button"><a href="../html/ViewCalibrationData.html"</a>VIEW DATA CALIBRATION</button><br>
+  <button class = "button" type="button"><a href="../html/AddData.html"</a>ADD DATA CALIBRATION</button><br>
+  <button class = "button" type="button"><a href="../html/DeleteData.html"</a>DELETE DATA CALIBRATION</button><br>
+  <button class = "button" type="button"><a href="../html/AddDataBins.html"</a>ADD DATA BINS</button><br>
+  <button class = "button" type="button"><a href="../html/DeleteDataBins.html"</a>DELETE DATA BINS</a></button><br>
+  <button class = "button" type="button"><a href="../html/AddDataPickup.html"</a>ADD DATA PICKUP</button><br>
+  <button class = "button" type="button"><a href="../html/DeleteDataPickup.html"</a>DELETE DATA PICKUP</button><br>
+  <button class = "button" type="button"><a href="../html/AddDataTruck.html"</a>ADD DATA TRUCK</button><br>
+  <button class = "button" type="button"><a href="../html/DeleteDataTruck.html"</a>DELETE DATA TRUCK</button><br>
+  </div>
 </div>
 </main>
 </body>
