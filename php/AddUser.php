@@ -122,8 +122,8 @@ function CreateUser(){
     echo "<p style=\"text-align:center; color:red; width:100%; font-size:12px;\">" . $errorString . "</p>";
 }
     if(strlen($errorString) == 0){
+      include '../php/ConnectDB.php';
       // Creates the User
-      $connection = include '../php/ConnectDB.php';
       $CreateUserQuery = "INSERT INTO User (Username, UserPassword, First_Name, Last_Name)
       VALUES ('" . $Username . "', '" . password_hash($Password1, PASSWORD_DEFAULT) . "', '" . $FName . "', '" . $LName . "')";
 
