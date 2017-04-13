@@ -15,10 +15,10 @@
 <header>
 <div>
   <ul>
-      <li><a href="../html/HomePage.php">HOME</a></li>
-      <li><a href="../html/DownloadPage.php">DOWNLOAD</a></li>
-      <li><a href="../html/Householdlookup.php">HOUSEHOLD LOOKUP</a></li>
-      <li><a href="../html/Viewdata.php">VIEW DATA</a></li>
+      <li><a href="../php/HomePage.php">HOME</a></li>
+      <li><a href="../php/DownloadPage.php">DOWNLOAD</a></li>
+      <li><a href="../php/Householdlookup.php">HOUSEHOLD LOOKUP</a></li>
+      <li><a href="../php/Viewdata.php">VIEW DATA</a></li>
   </ul>
   <ul class="logout">
     <li><a href="../php/AdminPage.php">ADMINISTRATION</a></li>
