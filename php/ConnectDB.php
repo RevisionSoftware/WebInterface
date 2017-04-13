@@ -5,6 +5,5 @@
     if(mysqli_connect_errno()){
         die("Connection Failed. ERR: " . mysqli_connect_error());
     }
-    //Return connection variable
     return $connection;
 ?>

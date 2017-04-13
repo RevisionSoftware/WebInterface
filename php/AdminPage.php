@@ -16,10 +16,10 @@
 <header>
 <div>
   <ul>
-      <li><a href="../html/HomePage.html">HOME</a></li>
-      <li><a href="../html/DownloadPage.html">DOWNLOAD</a></li>
-      <li><a href="../html/Householdlookup.html">HOUSEHOLD LOOKUP</a></li>
-      <li><a href="../html/Viewdata.html">VIEW DATA</a></li>
+      <li><a href="../php/HomePage.php">HOME</a></li>
+      <li><a href="../php/DownloadPage.php">DOWNLOAD</a></li>
+      <li><a href="../php/Householdlookup.php">HOUSEHOLD LOOKUP</a></li>
+      <li><a href="../php/Viewdata.php">VIEW DATA</a></li>
   </ul>
   <ul class="logout">
     <li><a href="../php/AdminPage.php">ADMINISTRATION</a></li>
@@ -41,6 +41,7 @@ if($result->num_rows > 0) {
 echo("<table>");
 $first_row = true;
 while ($row = mysqli_fetch_assoc($result)) {
+  $rownum = 0;
     if ($first_row) {
         $first_row = false;
         // Output header row from keys.
@@ -48,12 +49,15 @@ while ($row = mysqli_fetch_assoc($result)) {
         foreach($row as $key => $field) {
             echo '<th>' . htmlspecialchars($key) . '</th>';
         }
+        echo '<th> Modify </th>';
         echo '</tr>';
     }
     echo '<tr>';
     foreach($row as $key => $field) {
         echo '<td>' . htmlspecialchars($field) . '</td>';
+        $rownum++;
     }
+    echo '<td> <input type="image" src="../image/EditIcon.png" name="Edit" value="Modify" class="image" id="$rownum"> </td>';
     echo '</tr>';
 }
 echo("</table>");
