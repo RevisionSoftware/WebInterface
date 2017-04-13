@@ -66,7 +66,7 @@ function LoginUser(){
 
     if(password_verify($Password, $hash))
    {
-      header("Location: ../html/HomePage.html");
+      header("Location: ../php/HomePage.php");
       exit();
   }
    }

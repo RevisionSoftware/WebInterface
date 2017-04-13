@@ -15,10 +15,10 @@
 <header>
 <div>
   <ul>
-      <li><a href="../html/HomePage.html">HOME</a></li>
-      <li><a href="../html/DownloadPage.html">DOWNLOAD</a></li>
-      <li><a href="../html/Householdlookup.html">HOUSEHOLD LOOKUP</a></li>
-      <li><a href="../html/Viewdata.html">VIEW DATA</a></li>
+      <li><a href="../html/HomePage.php">HOME</a></li>
+      <li><a href="../html/DownloadPage.php">DOWNLOAD</a></li>
+      <li><a href="../html/Householdlookup.php">HOUSEHOLD LOOKUP</a></li>
+      <li><a href="../html/Viewdata.php">VIEW DATA</a></li>
   </ul>
   <ul class="logout">
     <li><a href="../php/AdminPage.php">ADMINISTRATION</a></li>
@@ -122,7 +122,7 @@ function CreateUser(){
     echo "<p style=\"text-align:center; color:red; width:100%; font-size:12px;\">" . $errorString . "</p>";
 }
     if(strlen($errorString) == 0){
-      include '../php/ConnectDB.php';
+      $connection = include '../php/ConnectDB.php';
       // Creates the User
       $CreateUserQuery = "INSERT INTO User (Username, UserPassword, First_Name, Last_Name)
       VALUES ('" . $Username . "', '" . password_hash($Password1, PASSWORD_DEFAULT) . "', '" . $FName . "', '" . $LName . "')";

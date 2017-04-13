@@ -14,10 +14,10 @@
   <header>
 <div>
   <ul>
-    <li><a href="../html/HomePage.html">HOME</a></li>
-    <li><a href="../html/DownloadPage.html">DOWNLOAD</a></li>
-    <li><a href="../html/Householdlookup.html">HOUSEHOLD LOOKUP</a></li>
-    <li><a href="../html/Viewdata.html">VIEW DATA</a></li>
+    <li><a href="../php/HomePage.php">HOME</a></li>
+    <li><a href="../php/DownloadPage.php">DOWNLOAD</a></li>
+    <li><a href="../php/Householdlookup.php">HOUSEHOLD LOOKUP</a></li>
+    <li><a href="../php/Viewdata.php">VIEW DATA</a></li>
   </ul>
   <ul class="logout">
     <li><a href="../php/AdminPage.php">ADMINISTRATION</a></li>
@@ -30,18 +30,12 @@
 <main>
   <div class="center">
   <!-- Main Page HTML goes here -->
-  <h1> VIEW TRUCK DATA </h1>
+  <h1> COMPARE CONDITION AVERAGES </h1>
 
 <!-- Route Type Checkboxes -->
 
 	   <!-- Account Num  -->
-   <div class = "AccNum">
-   <h3> <u>By: </u></h3>
-		<form action="/action_page.php">
-TRUCK VIN: <input type="text" name="FirstName" value=""><br>
-
-</form>
-
+   <div class = "CCA">
 
    </div>
 <!-- Route Type Checkboxes -->
@@ -84,6 +78,17 @@ TRUCK VIN: <input type="text" name="FirstName" value=""><br>
 			<input type="date" name="endDate" min="2000-01-02">
 			<input type="submit"> </br></li>
 	</form>
+
+<h3> <u>For Specific: </u></h3>
+		<form action="/action_page.php">
+ROUTE(S): <input type="text" name="FirstName" value=""><br>
+or
+NEIGHBORHOOD(S): <input type="text" name="LastName" value=""><br>
+or
+TRUCK(S): <input type="text" name="LastName" value=""><br>
+<input type="submit"> </br></li>
+</form>
+
    </div>
 
 
@@ -93,9 +98,9 @@ TRUCK VIN: <input type="text" name="FirstName" value=""><br>
 </br></br></br></br>
 </br></br></br></br>
 </div>
-</div>
-</main>
 
+</main>
+</div>
 </body>
 
-</html>
+</html>

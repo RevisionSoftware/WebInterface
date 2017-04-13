@@ -14,10 +14,10 @@
   <header>
 <div>
   <ul>
-      <li><a href="../html/HomePage.html">HOME</a></li>
-      <li><a href="../html/DownloadPage.html">DOWNLOAD</a></li>
-      <li><a href="../html/Householdlookup.html">HOUSEHOLD LOOKUP</a></li>
-      <li><a href="../html/Viewdata.html">VIEW DATA</a></li>
+      <li><a href="../php/HomePage.php">HOME</a></li>
+      <li><a href="../php/DownloadPage.php">DOWNLOAD</a></li>
+      <li><a href="../php/Householdlookup.php">HOUSEHOLD LOOKUP</a></li>
+      <li><a href="../php/Viewdata.php">VIEW DATA</a></li>
   </ul>
   <ul class="logout">
     <li><a href="../php/AdminPage.php">ADMINISTRATION</a></li>

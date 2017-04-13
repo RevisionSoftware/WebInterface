@@ -16,10 +16,10 @@
 <header>
 <div>
   <ul>
-      <li><a href="../html/HomePage.html">HOME</a></li>
-      <li><a href="../html/DownloadPage.html">DOWNLOAD</a></li>
-      <li><a href="../html/Householdlookup.html">HOUSEHOLD LOOKUP</a></li>
-      <li><a href="../html/Viewdata.html">VIEW DATA</a></li>
+      <li><a href="../php/HomePage.php">HOME</a></li>
+      <li><a href="../php/DownloadPage.php">DOWNLOAD</a></li>
+      <li><a href="../php/Householdlookup.php">HOUSEHOLD LOOKUP</a></li>
+      <li><a href="../php/Viewdata.php">VIEW DATA</a></li>
   </ul>
   <ul class="logout">
     <li><a href="../php/AdminPage.php">ADMINISTRATION</a></li>
@@ -33,7 +33,7 @@
 <div class="Outer-Form">
   <h2>Team Members<h2>
 <?php
-include '../php/ConnectDB.php';
+$connection = include '../php/ConnectDB.php';
 $sql = "SELECT Username AS User, First_Name AS 'First Name', Last_Name AS 'Last Name', Team_Type AS Type FROM User, Team WHERE (User.User_ID=Team.User_ID) ORDER BY Last_Name ASC";
 $result = mysqli_query($connection, $sql);
 
