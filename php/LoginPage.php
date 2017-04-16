@@ -56,29 +56,37 @@ function LoginUser(){
   $GetHashDB = "SELECT UserPassword FROM User WHERE (Username = '$Username')";
   $result = mysqli_query($connection, $GetHashDB);
 
-  //echo "<br>Username: $Username";
   $num_rows = mysqli_num_rows($result);
 
   if($num_rows ==1)
   {
     $row = mysqli_fetch_assoc($result);
     $hash = $row['UserPassword'];
-
+    //password matches, sending to homepage and setting session variables
     if(password_verify($Password, $hash))
    {
+     session_start();
+     //setting username session
+      $_SESSION["username"] = $Username;
+      //query to get team type
+      $GetType = "SELECT Team_Type FROM User,Team WHERE ((Username = '$Username') AND (User.User_ID=Team.User_ID))";
+      $result_type = mysqli_query($connection, $GetType);
+      $typerow = mysqli_fetch_assoc($result_type);
+      $TeamType = $typerow['Team_Type'];
+      //setting team team type ... admin or standard
+      $_SESSION["teamtype"] = $TeamType;
+      //sending to homepage on successful login
       header("Location: ../php/HomePage.php");
       exit();
   }
    }
-
-    else
-    {
-      echo "<p style=\"text-align:center; color:red; width:100%; font-size:12px;\">Invalid password.</p>";
-    }
-
    if($num_rows ==0)
   {
     echo "<p style=\"text-align:center; color:red; width:100%; font-size:12px;\">Username does not exist.</p>";
+  }
+  else
+  {
+    echo "<p style=\"text-align:center; color:red; width:100%; font-size:12px;\">Invalid password.</p>";
   }
 
 }

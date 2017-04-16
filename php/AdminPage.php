@@ -1,3 +1,18 @@
+<?php
+session_start();
+//if not logged in, redirect to LoginPage
+/* if(!isset($_SESSION['username'])){
+//   header("Location: ../php/LoginPage.php");
+else{ */
+//if not admin, do not allow on this page
+if($_SESSION["teamtype"] != "Admin"){
+header("Location: ../php/HomePage.php");
+}
+//}
+//}
+
+$connection = include '../php/ConnectDB.php';
+?>
 <!DOCTYPE html>
 <!-- Created by: Revision Software -->
 <html lang="en">
@@ -22,8 +37,8 @@
       <li><a href="../php/Viewdata.php">VIEW DATA</a></li>
   </ul>
   <ul class="logout">
-    <li><a href="../php/AdminPage.php">ADMINISTRATION</a></li>
-    <li><a href="../php/LoginPage.php">LOGOUT</a></li>
+    <?php if($_SESSION["teamtype"] == "Admin"){ echo '<li><a href="../php/AdminPage.php">ADMINISTRATION</a></li>'; } ?>
+    <li><a href="../php/Logout.php">LOGOUT</a></li>
 </ul>
 </div>
 </header>
@@ -33,7 +48,6 @@
 <div class="Outer-Form">
   <h2>Team Members<h2>
 <?php
-$connection = include '../php/ConnectDB.php';
 $sql = "SELECT Username AS User, First_Name AS 'First Name', Last_Name AS 'Last Name', Team_Type AS Type FROM User, Team WHERE (User.User_ID=Team.User_ID) ORDER BY Last_Name ASC";
 $result = mysqli_query($connection, $sql);
 
