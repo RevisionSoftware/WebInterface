@@ -1,12 +1,3 @@
-<?php 
-session_start();
-//if not logged in, redirect to LoginPage
-/*
-if(!isset($_SESSION['username'])){
-   header("Location: ../php/LoginPage.php");
-}
-*/
-?>
 <!DOCTYPE html>
 <!--ADD Calibration Form  -->
 <html lang = "en">

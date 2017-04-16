@@ -1,16 +1,3 @@
-<?php
-session_start();
-//if not logged in, redirect to LoginPage
-/* if(!isset($_SESSION['username'])){
-//   header("Location: ../php/LoginPage.php");
-else{ */
-//if not admin, do not allow on this page
-if($_SESSION["teamtype"] != "Admin"){
-header("Location: ../php/HomePage.php");
-}
-//}
-//}
-?>
 <!DOCTYPE html>
 <!-- Created by: Revision Software -->
 <html lang="en">
@@ -34,8 +21,8 @@ header("Location: ../php/HomePage.php");
       <li><a href="../php/Viewdata.php">VIEW DATA</a></li>
   </ul>
   <ul class="logout">
-    <?php if($_SESSION["teamtype"] == "Admin"){ echo '<li><a href="../php/AdminPage.php">ADMINISTRATION</a></li>'; } ?>
-    <li><a href="../php/Logout.php">LOGOUT</a></li>
+    <li><a href="../php/AdminPage.php">ADMINISTRATION</a></li>
+    <li><a href="../php/LoginPage.php">LOGOUT</a></li>
 </ul>
 </div>
 </header>
