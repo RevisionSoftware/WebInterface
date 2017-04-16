@@ -1,3 +1,12 @@
+<?php
+session_start();
+//if not logged in, redirect to LoginPage
+/*
+if(!isset($_SESSION['username'])){
+   header("Location: ../php/LoginPage.php");
+}
+*/
+?>
 <!DOCTYPE html>
 <!--Item ID search Form  -->
 <html lang = "en">
