@@ -1,3 +1,12 @@
+<?php
+session_start();
+//if not logged in, redirect to LoginPage
+/*
+if(!isset($_SESSION['username'])){
+   header("Location: ../php/LoginPage.php");
+}
+*/
+?>
 <!DOCTYPE html>
 <!--Item ID search Form  -->
 <html lang = "en">
@@ -5,7 +14,6 @@
 <title> PHP Script for Bins Table </title>
 <link rel="stylesheet" type="text/css" href="../css/HomePage.css">
 <link rel="stylesheet" type="text/css" href="../css/AdminPage.css">
-<link rel="stylesheet" type="text/css" href="../css/Modal.css">
    </head>
 <body>
 <?php

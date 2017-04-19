@@ -1,22 +1,36 @@
+<?php
+session_start();
+//if not logged in, redirect to LoginPage
+/*
+if(!isset($_SESSION['username'])){
+   header("Location: ../php/LoginPage.php");
+}
+*/
+?>
 <!DOCTYPE html>
-<!--ADD Calibration Form  -->
+<!--Item ID search Form  -->
 <html lang = "en">
-   <head>
-<title> PHP Script for Calibration Table </title>
+         <head>
+<title> PHP Script for Items Table </title>
 <link rel="stylesheet" type="text/css" href="../Style/view.css">
-   </head>
+         </head>
 <body>
 <?php
+//Create a basic connection
+$db = mysqli_connect("localhost", "snedd001", "snedd001", "snedd001");
 
-    //Create a basic connection
-    $db = mysqli_connect("localhost", "snedd001", "snedd001", "snedd001");
-    //Check the connection
-    if(mysqli_connect_errno()){
-        die("Connection Failed. ERR: " . mysqli_connect_error());
-    }
-    //Return connection variable
-    return $db;
+if (!$db) // Check connection if statement
+  {
+    print "*****CONNECTION TO DATABASE FAILED***** ";exit;
+  }
+echo "*****CONNECTION TO DATABASE SUCCESSFUL*****";
 
+$snedd001 = mysqli_select_db($db, "snedd001");
+
+if (!$snedd001)//if statement checks the database selected
+  {
+    print "Error - unable to select from this database.";exit;
+  }
 
 //query to select info from Items
 $query = "SELECT * FROM Calibration";
@@ -34,7 +48,7 @@ if(!$Qresult)//if statement for checking query
 
 // Display the results in a table
 print "<div>";
-print "<table> <caption> <h1> Item Table: </h1>";
+print "<table> <caption> <h1> Employee Table: </h1>";
 print "<tr align = 'center'>";
 
 
@@ -54,22 +68,22 @@ if($n_rows > 0)
     // Display column names as appropriate column headers
     for($i = 0; $i < $num_fields; $i++)
       {
-        print "<th>" . $CNames[$i] . "</th>";
+	print "<th>" . $CNames[$i] . "</th>";
       }
     print "</tr>";
 
     // Display the values of rows
     for($row_num = 0; $row_num < $n_rows; $row_num++)
       {
-        print "<tr>";
-        $values = array_values($firstRow);
-        for($i = 0; $i < $num_fields; $i++)
-          {
-            $value = htmlspecialchars($values[$i]);
-            print "<td>" . $value . "</td>";
-          }
-        print "</tr>";// End row
-        $firstRow = mysqli_fetch_assoc($Qresult);//next row
+	print "<tr>";
+	$values = array_values($firstRow);
+	for($i = 0; $i < $num_fields; $i++)
+	  {
+	    $value = htmlspecialchars($values[$i]);
+	    print "<td>" . $value . "</td>";
+	  }
+	print "</tr>";// End row
+	$firstRow = mysqli_fetch_assoc($Qresult);//next row
       }
   }
  else//else statement if nothing is inputed or false

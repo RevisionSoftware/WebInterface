@@ -1,3 +1,12 @@
+<?php
+session_start();
+//if not logged in, redirect to LoginPage
+/*
+if(!isset($_SESSION['username'])){
+   header("Location: ../php/LoginPage.php");
+}
+*/
+?>
 <!DOCTYPE html>
 <!-- Created by: Revision Software -->
 <html lang="en">
@@ -14,14 +23,14 @@
   <header>
 <div>
   <ul>
-      <li><a href="../html/HomePage.html">HOME</a></li>
-      <li><a href="../html/DownloadPage.html">DOWNLOAD</a></li>
-      <li><a href="../html/Householdlookup.html">HOUSEHOLD LOOKUP</a></li>
-      <li><a href="../html/Viewdata.html">VIEW DATA</a></li>
+    <li><a href="../php/HomePage.php">HOME</a></li>
+    <li><a href="../php/DownloadPage.php">DOWNLOAD</a></li>
+    <li><a href="../php/Householdlookup.php">HOUSEHOLD LOOKUP</a></li>
+    <li><a href="../php/Viewdata.php">VIEW DATA</a></li>
   </ul>
   <ul class="logout">
-    <li><a href="../php/AdminPage.php">ADMINISTRATION</a></li>
-    <li><a href="../html/LoginPage.php">LOGOUT</a></li>
+    <?php if($_SESSION["teamtype"] == "Admin"){ echo '<li><a href="../php/AdminPage.php">ADMINISTRATION</a></li>'; } ?>
+    <li><a href="../php/Logout.php">LOGOUT</a></li>
 </ul>
 </div>
   </header>

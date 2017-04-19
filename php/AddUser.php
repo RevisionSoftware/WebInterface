@@ -1,3 +1,16 @@
+<?php
+session_start();
+//if not logged in, redirect to LoginPage
+/* if(!isset($_SESSION['username'])){
+//   header("Location: ../php/LoginPage.php");
+else{ */
+//if not admin, do not allow on this page
+if($_SESSION["teamtype"] != "Admin"){
+header("Location: ../php/HomePage.php");
+}
+//}
+//}
+?>
 <!DOCTYPE html>
 <!-- Created by: Revision Software -->
 <html lang="en">
@@ -15,14 +28,14 @@
 <header>
 <div>
   <ul>
-      <li><a href="../html/HomePage.html">HOME</a></li>
-      <li><a href="../html/DownloadPage.html">DOWNLOAD</a></li>
-      <li><a href="../html/Householdlookup.html">HOUSEHOLD LOOKUP</a></li>
-      <li><a href="../html/Viewdata.html">VIEW DATA</a></li>
+      <li><a href="../php/HomePage.php">HOME</a></li>
+      <li><a href="../php/DownloadPage.php">DOWNLOAD</a></li>
+      <li><a href="../php/Householdlookup.php">HOUSEHOLD LOOKUP</a></li>
+      <li><a href="../php/Viewdata.php">VIEW DATA</a></li>
   </ul>
   <ul class="logout">
-    <li><a href="../php/AdminPage.php">ADMINISTRATION</a></li>
-    <li><a href="../html/LoginPage.php">LOGOUT</a></li>
+    <?php if($_SESSION["teamtype"] == "Admin"){ echo '<li><a href="../php/AdminPage.php">ADMINISTRATION</a></li>'; } ?>
+    <li><a href="../php/Logout.php">LOGOUT</a></li>
 </ul>
 </div>
 </header>
@@ -120,10 +133,10 @@ function CreateUser(){
     //Hash password if they match
     if(strlen($errorString) > 0){
     echo "<p style=\"text-align:center; color:red; width:100%; font-size:12px;\">" . $errorString . "</p>";
-
+}
     if(strlen($errorString) == 0){
-      // Creates the User
       $connection = include '../php/ConnectDB.php';
+      // Creates the User
       $CreateUserQuery = "INSERT INTO User (Username, UserPassword, First_Name, Last_Name)
       VALUES ('" . $Username . "', '" . password_hash($Password1, PASSWORD_DEFAULT) . "', '" . $FName . "', '" . $LName . "')";
 
@@ -139,7 +152,7 @@ function CreateUser(){
       }
 }
 }
-}
+
 
 ?>
 </main>

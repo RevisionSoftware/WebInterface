@@ -5,7 +5,7 @@ body{
 }
 .Outer-Form {
   background: #FFFFFF;
-  max-width: 500px;
+  max-width: 800px;
   margin: 0 auto 100px;
   padding: 45px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -29,9 +29,20 @@ input[type='submit']:hover{
 table, th, td {
   border-collapse: collapse;
   border: 1px solid black;
-    text-align: center;
-    margin: auto;
+  text-align: center;
+  margin: auto;
+}
+th, td{
 }
 tr:nth-child(even){
   background-color: #f2f2f2
+}
+.image{
+  height: auto;
+    width: auto;
+    max-width: 20px;
+    max-height: 20px;
+}
+.image:hover{
+  opacity:.5;
 }
