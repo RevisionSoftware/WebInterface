@@ -13,7 +13,7 @@ if(!isset($_SESSION['username'])){
 
 <head>
   <meta charset="UTF-8">
-    <title>Tables: ADD/DELETE</title>
+    <title>ADMIN TABLE ACCESS: ADD/DELETE/VIEW</title>
      <link rel="stylesheet" type="text/css" href="../css/HomePage.css">
      <link rel="stylesheet" type="text/css" href="../css/DownloadPage.css">
 </head>
@@ -41,15 +41,10 @@ if(!isset($_SESSION['username'])){
   <!-- Main Page HTML goes here -->
   <h1> Tables: ADD/DELETE </h1>
   <div class="btn-group">
-<button class = "button" type="button"><a href="../php/ViewCalibrationData.php"</a>VIEW DATA CALIBRATION</button><br>
-  <button class = "button" type="button"><a href="../php/AddData.php"</a>ADD DATA CALIBRATION</button><br>
-  <button class = "button" type="button"><a href="../php/DeleteData.php"</a>DELETE DATA CALIBRATION</button><br>
-  <button class = "button" type="button"><a href="../php/AddDataBins.php"</a>ADD DATA BINS</button><br>
-  <button class = "button" type="button"><a href="../php/DeleteDataBins.php"</a>DELETE DATA BINS</a></button><br>
-  <button class = "button" type="button"><a href="../php/AddDataPickup.php"</a>ADD DATA PICKUP</button><br>
-  <button class = "button" type="button"><a href="../php/DeleteDataPickup.php"</a>DELETE DATA PICKUP</button><br>
-  <button class = "button" type="button"><a href="../php/AddDataTruck.php"</a>ADD DATA TRUCK</button><br>
-  <button class = "button" type="button"><a href="../php/DeleteDataTruck.php"</a>DELETE DATA TRUCK</button><br>
+<button class = "button" type="button"><a href="../php/ViewCalibrationData.php"</a>CALIBRATION DATA</button><br>
+<button class = "button" type="button"><a href="../php/ViewBinsData.php"</a>BINS DATA</button><br>
+  <button class = "button" type="button"><a href="../php/ViewPickupData.php"</a>PICKUP DATA</button><br>
+    <button class = "button" type="button"><a href="../php/ViewTruckDataTable.php"</a>TRUCK DATA</button><br>
   </div>
 </div>
 </main>
