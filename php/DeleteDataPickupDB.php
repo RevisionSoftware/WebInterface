@@ -28,7 +28,7 @@ $PIDU = htmlspecialchars($PID);
 $query = "DELETE FROM Pickup WHERE Pickup_ID = '$PIDU'";
 
 //Variable to store query result
-$Qresult = mysqli_query($db, $query);
+$Qresult = mysqli_query($connection, $query);
 
 if(!$Qresult)//if statement for checking query
   {

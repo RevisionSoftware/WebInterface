@@ -48,7 +48,6 @@ if(!isset($_SESSION['username'])){
                 <h2> <u>Search by: </u></h2>
                 <form action="/action_page.php">
                     <label> Account Number: </label><input type="text" name="FirstName" value=""><br>
-                    <label> or Address: </label><input type="text" name="LastName" value="">
                 </form>
 
 
