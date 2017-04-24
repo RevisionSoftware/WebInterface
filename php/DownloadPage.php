@@ -26,7 +26,7 @@ if(!isset($_SESSION['username'])){
     <li><a href="../php/HomePage.php">HOME</a></li>
     <li><a href="../php/DownloadPage.php">DOWNLOAD</a></li>
     <li><a href="../php/Householdlookup.php">HOUSEHOLD LOOKUP</a></li>
-    <li><a href="../php/Viewdata.php">VIEW DATA</a></li>>
+    <li><a href="../php/Viewdata.php">VIEW DATA</a></li>
   </ul>
   <ul class="logout">
     <?php if($_SESSION["teamtype"] == "Admin"){ echo '<li><a href="../php/AdminPage.php">ADMINISTRATION</a></li>'; } ?>
