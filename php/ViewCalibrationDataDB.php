@@ -8,35 +8,46 @@ if(!isset($_SESSION['username'])){
 */
 ?>
 <!DOCTYPE html>
+<!-- Created by: Revision Software -->
 <!--Item ID search Form  -->
 <html lang = "en">
          <head>
 <title> PHP Script for Items Table </title>
-<link rel="stylesheet" type="text/css" href="../Style/view.css">
+<link rel="stylesheet" type="text/css" href="../css/HomePage.css">
+<link rel="stylesheet" type="text/css" href="../css/DownloadPage.css">
          </head>
 <body>
+  <!-- START HEADER: MUST BE ON ALL PAGES -->
+  <header>
+<div>
+  <ul>
+    <li><a href="../php/HomePage.php">HOME</a></li>
+    <li><a href="../php/DownloadPage.php">DOWNLOAD</a></li>
+    <li><a href="../php/Householdlookup.php">HOUSEHOLD LOOKUP</a></li>
+    <li><a href="../php/Viewdata.php">VIEW DATA</a></li>
+  </ul>
+  <ul class="logout">
+    <?php if($_SESSION["teamtype"] == "Admin"){ echo '<li><a href="../php/AdminPage.php">ADMINISTRATION</a></li>'; } ?>
+    <li><a href="../php/Logout.php">LOGOUT</a></li>
+</ul>
+</div>
+  </header>
+  <!-- END HEADER: MUST BE ON ALL PAGES -->
+  <main>
 <?php
 //Create a basic connection
-$db = mysqli_connect("localhost", "snedd001", "snedd001", "snedd001");
+$connection = include '../php/ConnectDB.php';
 
-if (!$db) // Check connection if statement
+if (!$connection) // Check connection if statement
   {
     print "*****CONNECTION TO DATABASE FAILED***** ";exit;
-  }
-echo "*****CONNECTION TO DATABASE SUCCESSFUL*****";
-
-$snedd001 = mysqli_select_db($db, "snedd001");
-
-if (!$snedd001)//if statement checks the database selected
-  {
-    print "Error - unable to select from this database.";exit;
   }
 
 //query to select info from Items
 $query = "SELECT * FROM Calibration";
 
 //Variable to store query result
-$Qresult = mysqli_query($db, $query);
+$Qresult = mysqli_query($connection, $query);
 
 if(!$Qresult)//if statement for checking query
   {
@@ -95,5 +106,6 @@ if($n_rows > 0)
 print "</table>";
 print "</div>";
 ?>
+</main>
 </body>
 </html>

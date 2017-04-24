@@ -1,0 +1,18 @@
+input[type='button'],button{
+  font-family: 'Karma', serif;
+  background: #2F3F86;
+  width: 360px;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 16px;
+  outline: 1;
+  border: 0;
+}
+input[type='button']:hover{
+  font-family: 'Karma', serif;
+  background: #4a5482;
+}
+
+input[type='button']:active{
+    transform: translateY(4px);
+}

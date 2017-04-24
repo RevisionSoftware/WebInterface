@@ -15,7 +15,7 @@ if(!isset($_SESSION['username'])){
   <meta charset="UTF-8">
     <title>Home Page</title>
      <link rel="stylesheet" type="text/css" href="../css/HomePage.css">
-     <link rel="stylesheet" type="text/css" href="../css/DownloadPage.css">
+     <link rel="stylesheet" type="text/css" href="../css/View.css">
 </head>
 
 <body>
@@ -43,21 +43,15 @@ if(!isset($_SESSION['username'])){
   <h1> View Data </h1>
 
    <!-- VIEW data BUTTONS -->
-   <div class = "DATA">
-  <h3> <u>Options: </u></h3>
-	<form action="">
-		<ul>
 
 <div class="btn-group">
-<button class = "button" type="button"><a href="../php/ViewHouseholdData.php"</a>HOUSEHOLD DATA</button><br>
-<button class = "button" type="button"><a href="../php/ViewNeighborhoodData.php"</a>NEIGHBORHOOD DATA</a></button><br>
-<button class = "button" type="button"><a href="../php/ViewTruckData.php"</a>TRUCK DATA</button><br>
-<button class = "button" type="button"><a href="../php/ViewRouteData.php"</a>ROUTE DATA</button><br>
-<button class = "button" type="button"><a href="../php/CompareConditionAverages.php"</a>COMPARE CONDITION AVERAGES</button>
+<input  type="button" onclick="location.href='../php/ViewHouseholdData.php'" value="HOUSEHOLD DATA"> <br><br>
+<input type="button" onclick="location.href='../php/ViewNeighborhoodData.php'" value="NEIGHBORHOOD DATA"> <br><br>
+<input  type="button" onclick="location.href='../php/ViewTruckData.php'" value="TRUCK DATA"> <br><br>
+<input  type="button" onclick="location.href='../php/ViewRouteData.php'" value="ROUTE DATA"> <br><br>
+<input  type="button" onclick="location.href='../php/CompareConditionAverages.php'" value="COMPARE CONDITION AVERAGES"> <br><br>
 </div>
-		</ul>
-	</form>
-   </div>
+		
     </br></br>
 <div class = "bottomBar">
 </br></br></br></br>
