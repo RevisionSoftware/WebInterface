@@ -1,6 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Karma);
 body {
   background: #A6BCD5;
+  background-image: url(../image/TTBackground2.jpg);
 }
 /* Outer Box */
 .login {

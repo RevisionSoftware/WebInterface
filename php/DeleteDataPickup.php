@@ -42,8 +42,8 @@ if(!isset($_SESSION['username'])){
   <h1> Delete Data Components here </h1>
   <form id = "ID" action = "DeleteDataPickupDB.php" method = "post">
   <fieldset><legend>Product Information</legend>
-  <label for="Pickup_ID">Pickup_ID:</label>
-  <input type="text" name="Pickup_ID" id="Pickup_ID" size="15" maxlength="15" placeholder="Enter Pickup_ID" required> <br>
+  <label for="PID">Pickup_ID:</label>
+  <input type="text" name="PID" id="PID" size="15" maxlength="15" placeholder="Enter Pickup_ID" required> <br>
   <br>
   <INPUT type="submit" id="submit" value="Submit"/>
   <INPUT type="submit" id="submit" value="Clear"/>

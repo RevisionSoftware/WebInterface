@@ -21,14 +21,14 @@ if(!isset($_SESSION['username'])){
 $connection = include '../php/ConnectDB.php';
 
 // Get the Pickup_ID entered by the user in the ID box
-$PID = $_POST['Pickup_ID'];
+$PID = $_POST['PID'];
 $PID = stripcslashes($PID);
 $PIDU = htmlspecialchars($PID);
 //query to select info from Items
 $query = "DELETE FROM Pickup WHERE Pickup_ID = '$PIDU'";
 
 //Variable to store query result
-$Qresult = mysqli_query($db, $query);
+$Qresult = mysqli_query($connection, $query);
 
 if(!$Qresult)//if statement for checking query
   {

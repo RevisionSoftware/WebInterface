@@ -2,6 +2,7 @@
 body{
     font-family: 'Karma', serif;
     text-align: center;
+      background-image: url(../image/TTBackground2.jpg);
 }
 .Outer-Form {
   background: #FFFFFF;

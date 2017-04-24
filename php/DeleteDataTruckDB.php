@@ -28,7 +28,7 @@ $TruckIDU = htmlspecialchars($TruckID);
 $query = "DELETE FROM Truck WHERE Truck_ID = '$TruckIDU'";
 
 //Variable to store query result
-$Qresult = mysqli_query($db, $query);
+$Qresult = mysqli_query($connection, $query);
 
 if(!$Qresult)//if statement for checking query
   {
