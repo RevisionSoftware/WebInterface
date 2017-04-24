@@ -13,7 +13,7 @@ if(!isset($_SESSION['username'])){
 
 <head>
   <meta charset="UTF-8">
-    <title>DELETE DATA PICKUP Page</title>
+    <title>ADD DATA Page</title>
      <link rel="stylesheet" type="text/css" href="../css/HomePage.css">
      <link rel="stylesheet" type="text/css" href="../css/DownloadPage.css">
 </head>
@@ -35,23 +35,19 @@ if(!isset($_SESSION['username'])){
 </div>
   </header>
 
-<main>
-  <div class="center">
-  <!-- Main Page HTML goes here -->
-  <h1> DELETE DATA PICKUP PAGE </h1>
-  <h1> Delete Data Components here </h1>
-  <form id = "ID" action = "DeleteDataPickupDB.php" method = "post">
-  <fieldset><legend>Product Information</legend>
-  <label for="Pickup_ID">Pickup_ID:</label>
-  <input type="text" name="Pickup_ID" id="Pickup_ID" size="15" maxlength="15" placeholder="Enter Pickup_ID" required> <br>
-  <br>
-  <INPUT type="submit" id="submit" value="Submit"/>
-  <INPUT type="submit" id="submit" value="Clear"/>
-  </fieldset>
-  <br>
-  </form>
-</div>
-</main>
-</body>
+   <body>
+   <div class = "center">
+   <h1> View Truck Table </h1>
 
+   <!-- Item ID section  -->
+<form>
+  <div class="btn-group">
+ <input class = "button" type="button" onclick="location.href='../php/ViewTruckDataDB.php'" value="Truck Table" id="submit">
+ <button class = "button" type="button"><a href="../php/AddDataTruck.php"</a>ADD TRUCK DATA</button><br>
+ <button class = "button" type="button"><a href="../php/DeleteDataTruck.php"</a>DELETE TRUCK DATA</a></button><br>
+</div>
+      </p>
+    </form>
+      </div>
+      </body>
 </html>

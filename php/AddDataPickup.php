@@ -40,8 +40,12 @@ if(!isset($_SESSION['username'])){
   <!-- Main Page HTML goes here -->
   <h1> ADD DATA PICKUP PAGE </h1>
   <h1> ADD Data Components here </h1>
-  <form>
+    <form id = "ID" action = "AddDataPickupDB.php" method = "post">
+
   <fieldset><legend>Product Information</legend>
+    <label for= "Pickup_ID">Pickup_ID:</label>
+    <input type="text" name="Pickup_ID" id="Pickup_ID" size="20" maxlength= "30" placeholder="Enter Pickup_ID" autofocus required> <br>
+    <br>
   <label for= "Address">Address:</label>
   <input type="text" name="Address" id="Address" size="20" maxlength= "30" placeholder="Enter Address" autofocus required> <br>
   <br>

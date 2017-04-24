@@ -40,13 +40,16 @@ if(!isset($_SESSION['username'])){
   <!-- Main Page HTML goes here -->
   <h1> ADD DATA BINS PAGE </h1>
   <h1> ADD Data Components here </h1>
-  <form>
+  <form id = "ID" action = "AddDataBinsDB.php" method = "post">
   <fieldset><legend>Product Information</legend>
   <label for= "RFID">RFID_TAG:</label>
   <input type="text" name="RFID" id="RFID" size="20" maxlength= "30" placeholder="Enter RFID" autofocus required> <br>
   <br>
   <label for="Account_Num">Account_Num: </label>
   <input type="text" name="Account_Num" id="Account_Num" size="15" maxlength="10" placeholder="Enter Account_Num" required> <br>
+  <br>
+  <label for="Resident_ID">Resident_ID:</label>
+  <input type="text" name="Resident_ID" id="Resident_ID" size="15" maxlength="15" placeholder="Enter Resident_ID" required> <br>
   <br>
   <label for="Bin_Type">Bin_Type:</label>
   <input type="text" name="Bin_Type" id="Bin_Type" size="15" maxlength="15" placeholder="Enter Bin_Type" required> <br>

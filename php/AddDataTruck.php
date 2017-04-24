@@ -40,7 +40,7 @@ if(!isset($_SESSION['username'])){
   <!-- Main Page HTML goes here -->
   <h1> ADD DATA TRUCK PAGE </h1>
   <h1> ADD Data Components here </h1>
-  <form>
+    <form id = "ID" action = "AddDataTruckDB.php" method = "post">
   <fieldset><legend>Product Information</legend>
   <label for= "Truck_ID">Truck_ID:</label>
   <input type="text" name="Truck_ID" id="Truck_ID" size="20" maxlength= "30" placeholder="Enter Truck_ID" autofocus required> <br>

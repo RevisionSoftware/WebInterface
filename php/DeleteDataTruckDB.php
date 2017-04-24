@@ -21,7 +21,7 @@ if(!isset($_SESSION['username'])){
 $connection = include '../php/ConnectDB.php';
 
 // Get the Truck_ID entered by the user in the ID box
-$TruckID = $_POST['TruckID'];
+$TruckID = $_POST['Truck_ID'];
 $TruckID = stripcslashes($TruckID);
 $TruckIDU = htmlspecialchars($TruckID);
 //query to select info from Items
