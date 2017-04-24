@@ -8,7 +8,7 @@ h1 {
     text-align: center;
 }
 
-h1, h2, ul, li, form, main {
+h1, h2, h3, ul, li, form, main {
     font-family: 'Karma', serif;
     list-style: none;
 }
