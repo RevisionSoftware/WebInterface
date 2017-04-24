@@ -21,7 +21,7 @@ if(!isset($_SESSION['username'])){
 $connection = include '../php/ConnectDB.php';
 
 // Get the Pickup_ID entered by the user in the ID box
-$PID = $_POST['PID'];
+$PID = $_POST['Pickup_ID'];
 $PID = stripcslashes($PID);
 $PIDU = htmlspecialchars($PID);
 //query to select info from Items

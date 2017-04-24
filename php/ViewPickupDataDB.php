@@ -11,7 +11,7 @@ if(!isset($_SESSION['username'])){
 <!--Item ID search Form  -->
 <html lang = "en">
          <head>
-<title> PHP Script for Items Table </title>
+<title> PHP Script for Pickup Table </title>
 <link rel="stylesheet" type="text/css" href="../Style/view.css">
          </head>
 <body>
@@ -33,7 +33,7 @@ if (!$snedd001)//if statement checks the database selected
   }
 
 //query to select info from Items
-$query = "SELECT * FROM Calibration";
+$query = "SELECT * FROM Pickup";
 
 //Variable to store query result
 $Qresult = mysqli_query($db, $query);
@@ -48,7 +48,7 @@ if(!$Qresult)//if statement for checking query
 
 // Display the results in a table
 print "<div>";
-print "<table> <caption> <h1> Calibration Table: </h1>";
+print "<table> <caption> <h1> Pickup Table: </h1>";
 print "<tr align = 'center'>";
 
 

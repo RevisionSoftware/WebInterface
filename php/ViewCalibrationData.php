@@ -41,8 +41,11 @@ if(!isset($_SESSION['username'])){
 
    <!-- Item ID section  -->
 <form>
- <input type="button" onclick="location.href='../php/ViewCalibrationDataDB.php'" value="Calibration Table" id="submit">
-
+  <div class="btn-group">
+ <input class = "button" type="button" onclick="location.href='../php/ViewCalibrationDataDB.php'" value="Calibration Table" id="submit">
+ <button class = "button" type="button"><a href="../php/AddData.php"</a>ADD DATA CALIBRATION</button><br>
+ <button class = "button" type="button"><a href="../php/DeleteData.php"</a>DELETE DATA CALIBRATION</button><br>
+</div>
       </p>
     </form>
       </div>

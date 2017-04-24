@@ -33,7 +33,7 @@ if (!$snedd001)//if statement checks the database selected
   }
 
 //query to select info from Items
-$query = "SELECT * FROM Calibration";
+$query = "SELECT * FROM Bins";
 
 //Variable to store query result
 $Qresult = mysqli_query($db, $query);
@@ -48,7 +48,7 @@ if(!$Qresult)//if statement for checking query
 
 // Display the results in a table
 print "<div>";
-print "<table> <caption> <h1> Calibration Table: </h1>";
+print "<table> <caption> <h1> Bins Table: </h1>";
 print "<tr align = 'center'>";
 
 
