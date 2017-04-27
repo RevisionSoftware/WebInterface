@@ -15,7 +15,7 @@ if(!isset($_SESSION['username'])){
   <meta charset="UTF-8">
     <title>Home Page</title>
      <link rel="stylesheet" type="text/css" href="../css/HomePage.css">
-     <link rel="stylesheet" type="text/css" href="../css/DownloadPage.css">
+     <link rel="stylesheet" type="text/css" href="../css/DataForm.css">
 </head>
 
 <body>
@@ -37,42 +37,37 @@ if(!isset($_SESSION['username'])){
   <!-- END HEADER: MUST BE ON ALL PAGES -->
 
 <main>
-  <div class="center">
+  <div class="centered">
   <!-- Main Page HTML goes here -->
-  <h1> THIS IS THE DOWNLOAD DATA PAGE </h1>
+  <h1>DOWNLOAD DATA</h1>
 
 <!-- Route Type Checkboxes -->
   <div class = "routeType">
   <h3> <u>ROUTE NUMBER: </u></h3>
 	<form action="">
 		<ul>
-			<li><input type="checkbox"  name="route" value="1">  1 </li>
-			<li><input type="checkbox"  name="route" value="2">  2</li>
-			<li><input type="checkbox"  name="route" value="3">  3</li>
-		</ul>
-		<ul>
-			<li><input type="checkbox"  name="route" value="4">  4</li>
-			<li><input type="checkbox"  name="route" value="5">  5	</li>
-			<li><input type="checkbox" name="route" value="ALL">  ALL</li>
+			<li><label><input type="checkbox"  name="1route" value="1">  1</label> </li>
+			<li><label><input type="checkbox"  name="2route" value="1">  2</label> </li>
+			<li><label><input type="checkbox"  name="3route" value="1">  3</label> </li>
+			<li><label><input type="checkbox"  name="4route" value="1">  4</label> </li>
+			<li><label><input type="checkbox"  name="5route" value="1">  5</label> </li>
+			<li><label><input type="checkbox"  name="Aroute" value="1">  ALL</label> </li>
 		</ul>
 	</form>
    </div>
-   </br></br>
 
    <!-- Waste Type Checkboxes -->
    <div class = "wasteType">
   <h3> <u>WASTE TYPE: </u></h3>
 	<form action="">
 		<ul>
-			<li><input type="checkbox" name="waste" value="1">  Trash </li>
-			<li><input type="checkbox" name="waste" value="2">  Recycling </li>
-			<li><input type="checkbox" name="waste" value="3">  Green Waste </li>
-			<li><input type="checkbox" name="waste" value="4">  ALL </li>
+      <li><label><input type="checkbox" name="Twaste" value="1"/>  Trash </label></li>
+			<li><label><input type="checkbox" name="Rwaste" value="2"/>  Recycling </label></li>
+			<li><label><input type="checkbox" name="Gwaste" value="3"/>  Green Waste </label></li>
+			<li><label><input type="checkbox" name="Awaste" value="4"/>  ALL </label></li>
 		</ul>
 	</form>
    </div>
-
-    </br></br>
 
 	   <!-- Date Range  -->
    <div class = "dateRange">

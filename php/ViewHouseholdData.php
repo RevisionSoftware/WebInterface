@@ -57,7 +57,7 @@ if(!isset($_SESSION['username'])){
                 <h3> <u>VIEW HOUSEHOLD: </u></h3>
                 <form action="">
                     <ul>
-                        <li><label><input type="checkbox" name="BIN IN/OUT" value="1" /> BIN IN/OUT </label></li>
+                        <li><label><input type="checkbox" name="BIN" value="1" /> BIN IN/OUT </label></li>
                         <li><label><input type="checkbox" name="WEIGHT" value="2" /> WEIGHT </label></li>
                         <li><label><input type="checkbox" name="PERCENTAGE" value="3" /> PERCENTAGE </label></li>
                         <li><label><input type="checkbox" name="ALL" value="4" /> ALL </label></li>
@@ -71,10 +71,10 @@ if(!isset($_SESSION['username'])){
                 <h3> <u>WASTE TYPE: </u></h3>
                 <form action="">
                     <ul>
-                        <li><label><input type="checkbox" name="waste" value="1" /> Trash </label></li>
-                        <li><label><input type="checkbox" name="waste" value="2" /> Recycling </label></li>
-                        <li><label><input type="checkbox" name="waste" value="3" /> Green Waste </label></li>
-                        <li><label><input type="checkbox" name="waste" value="4" /> ALL </label></li>
+                        <li><label><input type="checkbox" name="Twaste" value="1" /> Trash </label></li>
+                        <li><label><input type="checkbox" name="Rwaste" value="2" /> Recycling </label></li>
+                        <li><label><input type="checkbox" name="Gwaste" value="3" /> Green Waste </label></li>
+                        <li><label><input type="checkbox" name="Awaste" value="4" /> ALL </label></li>
                     </ul>
                 </form>
             </div>
