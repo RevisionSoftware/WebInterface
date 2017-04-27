@@ -15,7 +15,7 @@ if(!isset($_SESSION['username'])){
   <meta charset="UTF-8">
     <title>ADD DATA Page</title>
      <link rel="stylesheet" type="text/css" href="../css/HomePage.css">
-     <link rel="stylesheet" type="text/css" href="../css/DownloadPage.css">
+     <link rel="stylesheet" type="text/css" href="../css/View.css">
 </head>
 
 <body>
@@ -36,18 +36,20 @@ if(!isset($_SESSION['username'])){
   </header>
 
    <body>
+     <main>
    <div class = "center">
    <h1> View Pickup Table </h1>
 
    <!-- Item ID section  -->
 <form>
   <div class="btn-group">
- <input class = "button" type="button" onclick="location.href='../php/ViewPickupDataDB.php'" value="Pickup Table" id="submit">
- <button class = "button" type="button"><a href="../php/AddDataPickup.php"</a>ADD DATA PICKUP</button><br>
- <button class = "button" type="button"><a href="../php/DeleteDataPickup.php"</a>DELETE DATA PICKUP</button><br>
+ <input type="button" onclick="location.href='../php/ViewPickupDataDB.php'" value="PICKUP TABLE"><br><br>
+ <input type="button" onclick="location.href='../php/AddDataPickup.php'" value="ADD DATA PICKUP"><br><br>
+ <input type="button" onclick="location.href='../php/DeleteDataPickup.php'" value="DELETE DATA PICKUP"><br><br>
 </div>
-      </p>
+
     </form>
       </div>
+    </main>
       </body>
 </html>

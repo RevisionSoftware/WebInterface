@@ -15,7 +15,7 @@ if(!isset($_SESSION['username'])){
   <meta charset="UTF-8">
     <title>Home Page</title>
      <link rel="stylesheet" type="text/css" href="../css/HomePage.css">
-     <link rel="stylesheet" type="text/css" href="../css/DownloadPage.css">
+     <link rel="stylesheet" type="text/css" href="../css/DataForm.css">
 </head>
 
 <body>
@@ -37,7 +37,7 @@ if(!isset($_SESSION['username'])){
   <!-- END HEADER: MUST BE ON ALL PAGES -->
 
 <main>
-  <div class="center">
+  <div class="centered">
   <!-- Main Page HTML goes here -->
   <h1> LOOKUP HOUSEHOLD PAGE </h1>
 
@@ -45,13 +45,11 @@ if(!isset($_SESSION['username'])){
 
 	   <!-- Account Num  -->
    <div class = "AccNum">
-   <h3> <u>By: </u></h3>
+   <h3> <u>Search by: </u></h3>
 		<form action="/action_page.php">
 Account Number: <input type="text" name="FirstName" value=""><br>
 or
 Address: <input type="text" name="LastName" value=""><br>
-or
-RFID: <input type="text" name="LastName" value=""><br>
 <input type="submit" value="Submit">
 </form>
 

@@ -45,13 +45,13 @@ if(!isset($_SESSION['username'])){
    <!-- VIEW data BUTTONS -->
 
 <div class="btn-group">
-<input  type="button" onclick="location.href='../php/ViewHouseholdData.php'" value="HOUSEHOLD DATA"> <br><br>
+<input type="button" onclick="location.href='../php/ViewHouseholdData.php'" value="HOUSEHOLD DATA"> <br><br>
 <input type="button" onclick="location.href='../php/ViewNeighborhoodData.php'" value="NEIGHBORHOOD DATA"> <br><br>
-<input  type="button" onclick="location.href='../php/ViewTruckData.php'" value="TRUCK DATA"> <br><br>
-<input  type="button" onclick="location.href='../php/ViewRouteData.php'" value="ROUTE DATA"> <br><br>
-<input  type="button" onclick="location.href='../php/CompareConditionAverages.php'" value="COMPARE CONDITION AVERAGES"> <br><br>
+<input type="button" onclick="location.href='../php/ViewTruckData.php'" value="TRUCK DATA"> <br><br>
+<input type="button" onclick="location.href='../php/ViewRouteData.php'" value="ROUTE DATA"> <br><br>
+<input type="button" onclick="location.href='../php/CompareConditionAverages.php'" value="COMPARE CONDITION AVERAGES"> <br><br>
 </div>
-		
+
     </br></br>
 <div class = "bottomBar">
 </br></br></br></br>

@@ -15,7 +15,7 @@ if(!isset($_SESSION['username'])){
   <meta charset="UTF-8">
     <title>ADD DATA Page</title>
      <link rel="stylesheet" type="text/css" href="../css/HomePage.css">
-     <link rel="stylesheet" type="text/css" href="../css/DownloadPage.css">
+     <link rel="stylesheet" type="text/css" href="../css/View.css">
 </head>
 
 <body>
@@ -34,20 +34,20 @@ if(!isset($_SESSION['username'])){
 </ul>
 </div>
   </header>
-
-   <body>
+<body>
+  <main>
    <div class = "center">
    <h1> View Bins Table </h1>
 
    <!-- Item ID section  -->
 <form>
   <div class="btn-group">
- <input class = "button" type="button" onclick="location.href='../php/ViewBinsDataDB.php'" value="Bins Table" id="submit">
- <button class = "button" type="button"><a href="../php/AddDataBins.php"</a>ADD DATA BINS</button><br>
- <button class = "button" type="button"><a href="../php/DeleteDataBins.php"</a>DELETE DATA BINS</a></button><br>
+ <input type="button" onclick="location.href='../php/ViewBinsDataDB.php'" value="BINS TABLE"><br><br>
+ <input type="button" onclick="location.href='../php/AddDataBins.php'" value="ADD DATA BINS"><br><br>
+ <input type="button" onclick="location.href='../php/DeleteDataBins.php'" value="DELETE DATA BINS"><br><br>
 </div>
-      </p>
     </form>
       </div>
+    </main>
       </body>
 </html>
