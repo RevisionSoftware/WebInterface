@@ -15,7 +15,7 @@ if(!isset($_SESSION['username'])){
   <meta charset="UTF-8">
     <title>ADD DATA Page</title>
      <link rel="stylesheet" type="text/css" href="../css/HomePage.css">
-     <link rel="stylesheet" type="text/css" href="../css/DownloadPage.css">
+     <link rel="stylesheet" type="text/css" href="../css/View.css">
 </head>
 
 <body>
@@ -36,18 +36,20 @@ if(!isset($_SESSION['username'])){
   </header>
 
    <body>
+     <main>
    <div class = "center">
    <h1> View Truck Table </h1>
 
    <!-- Item ID section  -->
 <form>
   <div class="btn-group">
- <input class = "button" type="button" onclick="location.href='../php/ViewTruckDataDB.php'" value="Truck Table" id="submit">
- <button class = "button" type="button"><a href="../php/AddDataTruck.php"</a>ADD TRUCK DATA</button><br>
- <button class = "button" type="button"><a href="../php/DeleteDataTruck.php"</a>DELETE TRUCK DATA</a></button><br>
+ <input type="button" onclick="location.href='../php/ViewTruckDataDB.php'" value="TRUCK TABLE"><br><br>
+ <input type="button" onclick="location.href='../php/AddDataTruck.php'" value="ADD TRUCK DATA"><br><br>
+ <input type="button" onclick="location.href='../php/DeleteDataTruck.php'" value="DELETE TRUCK DATA"><br><br>
 </div>
-      </p>
+
     </form>
       </div>
+    </main>
       </body>
 </html>

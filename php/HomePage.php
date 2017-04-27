@@ -15,7 +15,7 @@ if(!isset($_SESSION['username'])){
   <meta charset="UTF-8">
     <title>ADMIN TABLE ACCESS: ADD/DELETE/VIEW</title>
      <link rel="stylesheet" type="text/css" href="../css/HomePage.css">
-     <link rel="stylesheet" type="text/css" href="../css/DownloadPage.css">
+     <link rel="stylesheet" type="text/css" href="../css/View.css">
 </head>
 
 <body>
@@ -41,10 +41,10 @@ if(!isset($_SESSION['username'])){
   <!-- Main Page HTML goes here -->
   <h1> Tables: ADD/DELETE </h1>
   <div class="btn-group">
-<button class = "button" type="button"><a href="../php/ViewCalibrationData.php"</a>CALIBRATION DATA</button><br>
-<button class = "button" type="button"><a href="../php/ViewBinsData.php"</a>BINS DATA</button><br>
-  <button class = "button" type="button"><a href="../php/ViewPickupData.php"</a>PICKUP DATA</button><br>
-    <button class = "button" type="button"><a href="../php/ViewTruckDataTable.php"</a>TRUCK DATA</button><br>
+  <input type="button" onclick="location.href='../php/ViewCalibrationData.php'" value="CALIBRATION DATA"><br><br>
+  <input type="button" onclick="location.href='../php/ViewBinsData.php'" value="BINS DATA"><br><br>
+  <input type="button" onclick="location.href='../php/ViewPickupData.php'" value="PICKUP DATA"><br><br>
+  <input type="button" onclick="location.href='../php/ViewTruckDataTable.php'" value="TRUCK DATA"><br><br>
   </div>
 </div>
 </main>

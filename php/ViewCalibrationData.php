@@ -36,18 +36,20 @@ if(!isset($_SESSION['username'])){
   </header>
 
    <body>
+     <main>
    <div class = "center">
    <h1> View Calibration Table </h1>
 
    <!-- Item ID section  -->
 <form>
   <div class="btn-group">
- <input  type="button" onclick="location.href='../php/ViewCalibrationDataDB.php'" value="Calibration Table" id="submit"> <br><br>
- <input  type="button" onclick="location.href='../php/AddData.php'" value="ADD DATA CALIBRATION"><br><br>
- <input  type="button" onclick="location.href='../php/DeleteData.php'" value="DELETE DATA CALIBRATION"><br>
+ <input type="button" onclick="location.href='../php/ViewCalibrationDataDB.php'" value="CALIBRATION TABLE"> <br><br>
+ <input type="button" onclick="location.href='../php/AddData.php'" value="ADD DATA CALIBRATION"><br><br>
+ <input type="button" onclick="location.href='../php/DeleteData.php'" value="DELETE DATA CALIBRATION"><br>
 </div>
-      </p>
+
     </form>
       </div>
+    </main>
       </body>
 </html>
