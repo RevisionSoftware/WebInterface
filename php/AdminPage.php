@@ -48,14 +48,15 @@ $connection = include '../php/ConnectDB.php';
 <div class="Outer-Form">
   <h2>Team Members<h2>
 <?php
-$sql = "SELECT Username AS User, First_Name AS 'First Name', Last_Name AS 'Last Name', Team_Type AS Type FROM User, Team WHERE (User.User_ID=Team.User_ID) ORDER BY Last_Name ASC";
+
+$sql = "SELECT Username AS 'User', First_Name AS 'First Name', Last_Name AS 'Last Name', Team_Type AS Type, User.User_ID AS 'ID' FROM User, Team WHERE (User.User_ID=Team.User_ID) ORDER BY ID ASC";
 $result = mysqli_query($connection, $sql);
+
 
 if($result->num_rows > 0) {
 echo("<table>");
 $first_row = true;
 while ($row = mysqli_fetch_assoc($result)) {
-  $rownum = 0;
     if ($first_row) {
         $first_row = false;
         // Output header row from keys.
@@ -69,16 +70,17 @@ while ($row = mysqli_fetch_assoc($result)) {
     echo '<tr>';
     foreach($row as $key => $field) {
         echo '<td>' . htmlspecialchars($field) . '</td>';
-        $rownum++;
+        $id = $field;
     }
-    echo '<td> <input type="image" src="../image/EditIcon.png" name="Edit" value="Modify" class="image" id="$rownum"> </td>';
+    echo '<td> <a href="ModifyUser.php?id='.$id.'"><img src="../image/EditIcon.png" class="image"</a> </td>';
     echo '</tr>';
 }
 echo("</table>");
 }
+
 ?>
 <br>
-<input type="submit" onclick="location.href='../php/AddUser.php'" value="Add User">
+<input type="submit" onclick="location.href='../php/AddUser.php'" value="Add User" class="submit">
 </div>
 
 </main>
