@@ -12,7 +12,7 @@ body{
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-input[type='submit']{
+.submit{
   font-family: 'Karma', serif;
   background: #A6BCD5;
   width: 50%;
@@ -23,7 +23,7 @@ input[type='submit']{
   border: 0;
 }
 
-input[type='submit']:hover{
+.submit:hover{
   background: #2F3F86;
   cursor: pointer;
 }
@@ -46,4 +46,19 @@ tr:nth-child(even){
 }
 .image:hover{
   opacity:.5;
+}
+
+.delete{
+  font-family: 'Karma', serif;
+  background:#A62A2A;
+  width: 50%;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 16px;
+  outline: 0;
+  border: 0;
+}
+
+.delete:hover{
+  background: #8B1A1A;
 }

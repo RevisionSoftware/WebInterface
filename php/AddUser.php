@@ -17,7 +17,7 @@ header("Location: ../php/HomePage.php");
 
 <head>
   <meta charset="UTF-8">
-    <title>Admin Page</title>
+    <title>Add User</title>
 
      <link rel="stylesheet" type="text/css" href="../css/HomePage.css">
      <link rel="stylesheet" type="text/css" href="../css/AdminPage.css">
@@ -43,19 +43,19 @@ header("Location: ../php/HomePage.php");
 <main>
     <h1>Administration Page</h1>
 <div class="Outer-Form">
-  <h2>Team Members<h2>
+  <h2>Add Member<h2>
 <br>
 <form id="CreateUser" method="POST">
-  <label>Username: <input type="text" name="Username" tile="Username"></label><br>
-  <label>First Name: <input type="text" name="FName" tile="First Name"></label><br>
-  <label>Last Name: <input type="text" name="LName" tile="Last Name"></label><br>
-  <label>Password: <input type="password" name="Password1"></label><br>
-  <label>Re-Enter Password: <input type="password" name="Password2"></label><br>
+  <label>Username: <input type="text" name="Username" tile="Username" required></label><br>
+  <label>First Name: <input type="text" name="FName" tile="First Name" required></label><br>
+  <label>Last Name: <input type="text" name="LName" tile="Last Name" required></label><br>
+  <label>Password: <input type="password" name="Password1" required></label><br>
+  <label>Re-Enter Password: <input type="password" name="Password2" required></label><br>
   <select name="TeamType">
       <option value="Standard" name="Standard">Standard</option>
       <option value="Admin" name="Admin">Admin</option>
     </select><br>
-   <input type="submit" name="submit" value="Submit"</input>
+   <input type="submit" name="submit" value="Submit" class="submit"</input>
    <?php
     if(isset($_POST['submit'])){
       CreateUser();
@@ -89,6 +89,9 @@ function CreateUser(){
     $Username = test_input($_POST["Username"]);
     if(!preg_match("/^[a-zA-Z0-9]+$/", $Username)){
       $errorString = $errorString . "Invalid Username format: Only use letters and numbers. <br>";
+    }
+    if(strlen($Username) < 4){
+      $errorString = $errorString . "Invalid Username format: Must be greater than 4 characters. <br>";
     }
   }
   if(empty($_POST["FName"])){
