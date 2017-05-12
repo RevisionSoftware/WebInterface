@@ -12,8 +12,8 @@
   <div class="login">
     <div class="form">
       <form id="login" method="POST">
-        <input type="text" name="Username" placeholder="username"/>
-        <input type="password" name="Password" placeholder="password"/>
+        <input type="text" name="Username" placeholder="username" required=""/>
+        <input type="password" name="Password" placeholder="password" required=""/>
         <input type="submit" name="submit" value="LOGIN"</input>
         <?php
         if(isset($_POST['submit'])){

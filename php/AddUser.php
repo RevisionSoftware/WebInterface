@@ -29,7 +29,6 @@ header("Location: ../php/HomePage.php");
 <div>
   <ul>
       <li><a href="../php/HomePage.php">HOME</a></li>
-      <li><a href="../php/DownloadPage.php">DOWNLOAD</a></li>
       <li><a href="../php/Householdlookup.php">HOUSEHOLD LOOKUP</a></li>
       <li><a href="../php/Viewdata.php">VIEW DATA</a></li>
   </ul>
