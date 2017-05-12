@@ -1,4 +1,4 @@
-<?php 
+<?php
 session_start();
 //if not logged in, redirect to LoginPage
 /*
@@ -17,20 +17,14 @@ if(!isset($_SESSION['username'])){
 <body>
 <?php
 				   //Create a basic connection
-$db = mysqli_connect("localhost", "snedd001", "snedd001", "snedd001");
+$connection = include '../php/ConnectDB.php';
 
-if (!$db) // Check connection if statement
+if (!$connection) // Check connection if statement
   {
     print "*****CONNECTION TO DATABASE FAILED***** ";exit;
   }
 echo "*****CONNECTION TO DATABASE SUCCESSFUL*****";
 
-$snedd001 = mysqli_select_db($db, "snedd001");
-
-if (!$snedd001)//if statement checks the database selected
-  {
-    print "Error - unable to select from this database.";exit;
-  }
 
 // Get the itemID entered by the user in the ID box
 $t1ID = $_POST['CID'];
@@ -68,7 +62,7 @@ $t8IDU = htmlspecialchars($t8ID);
 
 $query = "INSERT INTO Calibration(Calibration_ID,RFID_Tag,Truck_ID,Coefficient,Weight,Start_Time,Stop_Time,Date_Time) VALUES('$t1IDU','$t2IDU','$t3IDU','$t4IDU','$t5IDU','$t6IDU','$t7IDU','$t8IDU')";
 
-if(mysqli_query($db, $query)){
+if(mysqli_query($connection, $query)){
   echo "New Record has been added.";
  } else{
   echo "ERROR: Could was not able to execute record addition." . mysqli_error($link);

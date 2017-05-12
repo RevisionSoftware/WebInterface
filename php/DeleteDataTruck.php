@@ -24,7 +24,6 @@ if(!isset($_SESSION['username'])){
 <div>
   <ul>
     <li><a href="../php/HomePage.php">HOME</a></li>
-    <li><a href="../php/DownloadPage.php">DOWNLOAD</a></li>
     <li><a href="../php/Householdlookup.php">HOUSEHOLD LOOKUP</a></li>
     <li><a href="../php/Logout.php">LOGOUT</a></li>
   </ul>
