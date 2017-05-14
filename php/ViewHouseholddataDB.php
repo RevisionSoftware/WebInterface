@@ -39,6 +39,9 @@ $Awaste = $_POST['Awaste'];
 
 //PRINING WHAT IS IN THE VARIABLES
 echo "Printing variables <br><br>";
+echo "-- Printing number account entered --<br>";
+echo "Account Number: $HID<br><br>";
+
 echo "-- View household -- <br>";
 echo "Weight value: $WEIGHT <br>";
 echo "Percentage value: $PERCENTAGE <br>";
