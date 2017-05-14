@@ -16,6 +16,7 @@ if(!isset($_SESSION['username'])){
 <link rel="stylesheet" type="text/css" href="../css/AdminPage.css">
    </head>
 <body>
+  <main>
 <?php
 // Create connection
 $connection = include '../php/ConnectDB.php';
@@ -26,15 +27,30 @@ $HIDU = htmlspecialchars($HID);
 //View Household
 
 //$BIN = $_GET['1'];
-$WEIGHT = $_POST['WASTE'];
-$PERCENTAGE = $POST['PERCENTAGE'];
-$ALL = $POST['ALL'];
+$WEIGHT = $_POST['WEIGHT'];
+$PERCENTAGE = $_POST['PERCENTAGE'];
+$ALL = $_POST['ALL'];
 
 //Waste Type
-$Twaste = $POST['Twaste'];
-$Rwaste = $POST['Rwaste'];
-$Gwaste = $POST['Gwaste'];
-$Awaste = $POST['Awaste'];
+$Twaste = $_POST['Twaste'];
+$Rwaste = $_POST['Rwaste'];
+$Gwaste = $_POST['Gwaste'];
+$Awaste = $_POST['Awaste'];
+
+//PRINING WHAT IS IN THE VARIABLES
+echo "Printing variables <br><br>";
+echo "-- View household -- <br>";
+echo "Weight value: $WEIGHT <br>";
+echo "Percentage value: $PERCENTAGE <br>";
+echo "All value: $ALL <br><br>";
+
+echo "-- Waste type -- <br>";
+echo "Trash value: $Twaste <br>";
+echo "Recycle value: $Rwaste <br>";
+echo "Garbage value: $Gwaste <br>";
+echo "ALL(trash) value: $Awaste <br><br>";
+
+
 
 if($Account_Num != "")
 {
@@ -46,54 +62,54 @@ if($Account_Num != "")
         {
         $query = "SELECT Weight AS Trash_Weight
                     FROM Bins WHERE 'Account_Num' = $HIDU
-                    AND Bin_Type = 'Trash';";
+                    AND Bin_Type = 'Trash'";
         $query .= "SELECT Weight AS Recycle_Weight
                    FROM Bins WHERE 'Account_Num' = $HIDU
-                    AND Bin_Type = 'Recycle';"
+                    AND Bin_Type = 'Recycle'";
 
         }
       if($Rwaste ="Rwaste" && $Gwaste ="Gwaste")
         {
         $query = "SELECT Weight AS Recycle_Weight
                     FROM Bins WHERE 'Account_Num' = $HIDU
-                    AND Bin_Type = 'Recycle';";
+                    AND Bin_Type = 'Recycle'";
         $query .= "SELECT Weight AS Trash_Weight
                     FROM Bins WHERE 'Account_Num' = $HIDU
-                    AND Bin_Type = 'Green Waste';"
+                    AND Bin_Type = 'Green Waste'";
         }
         if($Gwaste ="Gwaste" && $Twaste ="Twaste" )
         {
         $query = "SELECT Weight AS Trash_Weight
                     FROM Bins WHERE 'Account_Num' = $HIDU
-                    AND Bin_Type = 'Green Waste';";
+                    AND Bin_Type = 'Green Waste'";
         $query .= "SELECT Weight AS Trash_Weight
                     FROM Bins WHERE 'Account_Num' = $HIDU
-                    AND Bin_Type = 'Trash';"
+                    AND Bin_Type = 'Trash'";
         }
         if($Twaste ="Twaste")
         {
         $query = "SELECT Weight AS Trash_Weight
                     FROM Bins WHERE 'Account_Num' = $HIDU
-                    AND Bin_Type = 'Trash';";
+                    AND Bin_Type = 'Trash'";
         }
       if($Rwaste ="Rwaste")
         {
         $query = "SELECT Weight AS Recycle_Weight
                     FROM Bins WHERE 'Account_Num' = $HIDU
-                    AND Bin_Type = 'Recycle';";
+                    AND Bin_Type = 'Recycle'";
         }
         if($Gwaste ="Gwaste")
         {
         $query = "SELECT Weight AS Trash_Weight
                     FROM Bins WHERE 'Account_Num' = $HIDU
-                    AND Bin_Type = 'Green Waste';";
+                    AND Bin_Type = 'Green Waste'";
         }
     }
     if($All ="Awaste")
     {
       $query = "SELECT Bin_Weight AS Trash_Weight
                   FROM Bins WHERE 'Account_Num' = $HIDU
-                  AND Bin_Type = 'Trash';";
+                  AND Bin_Type = 'Trash'";
       $query .= "SELECT Bin_Weight AS Recycle_Weight
                   FROM Bins WHERE 'Account_Num' = $HIDU
                   AND Bin_Type = 'Recycle'";
@@ -108,7 +124,7 @@ if($Account_Num != "")
         {
           $query = "SELECT (Bin_Weight / (SELECT Bin_Weight FROM Bins WHERE $t1IDU = 'Account_Num' AND )) * 100 AS 'TPercentage'
                       FROM Bins WHERE 'Account_Num' = $HIDU
-                      AND Bin_Type = 'Trash';";
+                      AND Bin_Type = 'Trash'";
           $query .= "SELECT (Bin_Weight / (SELECT Bin_Weight FROM Bins WHERE $t1IDU = 'Account_Num' AND )) * 100 AS 'RPercentage'
                       FROM Bins WHERE 'Account_Num' = $HIDU
                       AND Bin_Type = 'Recycle'";
@@ -117,7 +133,7 @@ if($Account_Num != "")
         {
           $query = "SELECT (Bin_Weight / (SELECT Bin_Weight FROM Bins WHERE $t1IDU = 'Account_Num' AND )) * 100 AS 'RPercentage'
                       FROM Bins WHERE 'Account_Num' = $HIDU
-                      AND Bin_Type = 'Recycle';";
+                      AND Bin_Type = 'Recycle'";
           $query .= "SELECT (Bin_Weight / (SELECT Bin_Weight FROM Bins WHERE $t1IDU = 'Account_Num' AND )) * 100 AS 'GPercentage'
                       FROM Bins WHERE 'Account_Num' = $HIDU
                       AND Bin_Type = 'Green'";
@@ -126,7 +142,7 @@ if($Account_Num != "")
         {
           $query = "SELECT (Bin_Weight / (SELECT Bin_Weight FROM Bins WHERE $t1IDU = 'Account_Num' AND )) * 100 AS 'GPercentage'
                       FROM Bins WHERE 'Account_Num' = $HIDU
-                      AND Bin_Type = 'Green';";
+                      AND Bin_Type = 'Green'";
           $query .= "SELECT (Bin_Weight / (SELECT Bin_Weight FROM Bins WHERE $t1IDU = 'Account_Num' AND )) * 100 AS 'TPercentage'
                       FROM Bins WHERE 'Account_Num' = $HIDU
                       AND Bin_Type = 'Trash'";
@@ -135,35 +151,36 @@ if($Account_Num != "")
         {
           $query = "SELECT (Bin_Weight / (SELECT Bin_Weight FROM Bins WHERE $t1IDU = 'Account_Num' AND )) * 100 AS 'TPercentage'
                       FROM Bins WHERE 'Account_Num' = $HIDU
-                      AND Bin_Type = 'Trash';";
+                      AND Bin_Type = 'Trash'";
         }
         if($Rwaste ="Rwaste")
         {
           $query = "SELECT (Bin_Weight / (SELECT Bin_Weight FROM Bins WHERE $t1IDU = 'Account_Num' AND )) * 100 AS 'RPercentage'
                       FROM Bins WHERE 'Account_Num' = $HIDU
-                      AND Bin_Type = 'Recycle';";
+                      AND Bin_Type = 'Recycle'";
         }
         if($Gwaste ="Gwaste")
         {
           $query = "SELECT (Bin_Weight / (SELECT Bin_Weight FROM Bins WHERE $t1IDU = 'Account_Num' AND )) * 100 AS 'GPercentage'
                       FROM Bins WHERE 'Account_Num' = $HIDU
-                      AND Bin_Type = 'Green';";
+                      AND Bin_Type = 'Green'";
         }
     }
 if($Awaste !="Awaste")
   {
   $query = "SELECT Bin_Weight AS Trash_Weight
             FROM Bins WHERE 'Account_Num' = $HIDU
-            AND Bin_Type = 'Trash';";
+            AND Bin_Type = 'Trash'";
   $query .= "SELECT Bin_Weight AS Recycle_Weight
             FROM Bins WHERE 'Account_Num' = $HIDU
-            AND Bin_Type = 'Recycle';"
+            AND Bin_Type = 'Recycle'";
   $query .= "SELECT Bin_Weight AS Trash_Weight
             FROM Bins WHERE 'Account_Num' = $HIDU
-            AND Bin_Type = 'Green Waste';"
+            AND Bin_Type = 'Green Waste'";
   }
 }
-    /* execute multi query */
+}
+     /* execute multi query */
     if (mysqli_multi_query($connection, $query)) {
         do {
             /* store first result set */
@@ -179,15 +196,19 @@ if($Awaste !="Awaste")
             }
         } while (mysqli_next_result($connection));
     }
+
     else{
-      {
+
         print "Error - The query was not successful.";
         $error = mysql_error();//sql error
         print "<p>" . $error . "</p>";
         exit;
       }
+
+
     /* close connection */
     mysqli_close($connection);
     ?>
+  </main>
 </body>
 </html>
