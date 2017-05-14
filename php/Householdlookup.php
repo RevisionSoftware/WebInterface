@@ -45,17 +45,11 @@ if(!isset($_SESSION['username'])){
 	   <!-- Account Num  -->
    <div class = "AccNum">
    <h3> <u>Search by: </u></h3>
-		<form action="/action_page.php">
-Account Number: <input type="text" name="FirstName" value=""><br>
-or
-Address: <input type="text" name="LastName" value=""><br>
+		<form id = "ID" action = "HouseholdlookupDB.php" method = "post">
+Account Number: <input type="text" name="Account_Num" id = "Account_Num" value=""><br>
 <input type="submit" value="Submit">
 </form>
-
-
    </div>
-
-
 <div class = "bottomBar">
 </br></br></br></br>
 </br></br></br></br>
