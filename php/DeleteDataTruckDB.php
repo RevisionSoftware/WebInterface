@@ -8,6 +8,7 @@ if(!isset($_SESSION['username'])){
 */
 if($_SESSION["teamtype"] != "Admin"){
 header("Location: ../php/HomePage.php");
+}
 ?>
 <!DOCTYPE html>
 <!--Item ID search Form  -->
