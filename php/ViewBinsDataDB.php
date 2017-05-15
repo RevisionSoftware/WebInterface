@@ -106,6 +106,54 @@ if($n_rows > 0)
 print "</table>";
 print "</div>";
 ?>
+<form method="post">
+<input type="submit" name="submit" value="Download" class="submit"</input>
+</form>
+<?php
+ if(isset($_POST['submit'])){
+   Download();
+ }
+
+function Download(){
+
+$setCounter = 0;
+$setExcelName = "BinsTable";
+$setSql = "SELECT * FROM Bins";
+$setRec = mysqli_query($setSql);
+$setCounter = mysqli_num_fields($setRec);
+
+for ($i = 0; $i < $setCounter; $i++) {
+    $setMainHeader .= mysqli_field_name($setRec, $i)."t";
+}
+
+while($rec = mysqli_fetch_row($setRec))  {
+  $rowLine = '';
+  foreach($rec as $value)       {
+    if(!isset($value) || $value == "")  {
+      $value = "t";
+    }   else  {
+//It escape all the special charactor, quotes from the data.
+      $value = strip_tags(str_replace('"', '""', $value));
+      $value = '"' . $value . '"' . "t";
+    }
+    $rowLine .= $value;
+  }
+  $setData .= trim($rowLine)."n";
+}
+  $setData = str_replace("r", "", $setData);
+
+
+$setCounter = mysqli_num_fields($setRec);
+//This Header is used to make data download instead of display the data
+
+header("Content-type: application/octet-stream");
+header("Content-Disposition: attachment; filename=".$setExcelName."_Report.xls");
+header("Pragma: no-cache");
+header("Expires: 0");
+
+}
+?>
+
 <body>
 </body>
 </html>
