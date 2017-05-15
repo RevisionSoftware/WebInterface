@@ -38,8 +38,6 @@ if(!isset($_SESSION['username'])){
 <main>
   <div class="center">
   <!-- Main Page HTML goes here -->
-    <?php if($_SESSION["teamtype"] == "Admin"){
-      ?>
   <h1> Tables: ADD/DELETE </h1>
   <div class="btn-group">
   <input type="button" onclick="location.href='../php/ViewCalibrationData.php'" value="CALIBRATION DATA"><br><br>
@@ -47,14 +45,6 @@ if(!isset($_SESSION['username'])){
   <input type="button" onclick="location.href='../php/ViewPickupData.php'" value="PICKUP DATA"><br><br>
   <input type="button" onclick="location.href='../php/ViewTruckDataTable.php'" value="TRUCK DATA"><br><br>
   </div>
-  <?php }
-  else{
-    ?>
-    <h1> Homepage Standard Team </h1>
-    <p> Nothing here yet... </p>
-    <?php
-    }
-     ?>
 </div>
 </main>
 </body>
