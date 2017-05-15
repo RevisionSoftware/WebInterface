@@ -50,8 +50,13 @@ if(!isset($_SESSION['username'])){
   <label for="Resident_ID">Resident_ID:</label>
   <input type="text" name="Resident_ID" id="Resident_ID" size="15" maxlength="15" placeholder="Enter Resident_ID" required> <br>
   <br>
-  <label for="Bin_Type">Bin_Type:</label>
-  <input type="text" name="Bin_Type" id="Bin_Type" size="15" maxlength="15" placeholder="Enter Bin_Type" required> <br>
+  <label for="Resident_ID">Trash_Type:</label>
+  <select name="Bin_Type">
+      <option value="Trash" name="Trash">Trash</option>
+      <option value="Recycle" name="Recycle">Recycle</option>
+      <option value="Green Waste" name="Green Waste">Green Waste</option>
+    </select>
+  <br>
   <br>
   <INPUT type="submit" id="submit" value="Submit"/>
   <INPUT type="submit" id="submit" value="Clear"/>
