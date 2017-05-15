@@ -6,6 +6,8 @@ if(!isset($_SESSION['username'])){
    header("Location: ../php/LoginPage.php");
 }
 */
+if($_SESSION["teamtype"] != "Admin"){
+header("Location: ../php/HomePage.php");
 ?>
 <!DOCTYPE html>
 <!--Calibatrion Info Delete Form  -->
