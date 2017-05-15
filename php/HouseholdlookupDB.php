@@ -249,18 +249,13 @@ print "</div>";
  $setRec1 = mysqli_query($setSql1);
  $setRec2 = mysqli_query($setSql1);
  $setRec3 = mysqli_query($setSql3);
- $setCounter1 = mysqli_num_fields($setRec1);
- $setCounter2 = mysqli_num_fields($setRec2);
- $setCounter3 = mysqli_num_fields($setRec3);
+ $setCounter = mysqli_num_fields($setRec1);
 
-for ($i = 0; $i < $setCounter1; $i++) {
+
+for ($i = 0; $i < $setCounter; $i++) {
     $setMainHeader1 .= mysqli_field_name($setRec1, $i)."t";
-}
-for ($i = 0; $i < $setCounter2; $i++) {
     $setMainHeader2 .= mysqli_field_name($setRec2, $i)."t";
-}
-for ($i = 0; $i < $setCounter3; $i++) {
-    $setMainHeader3 .= mysqli_field_name($setRec3, $i)."t";
+      $setMainHeader3 .= mysqli_field_name($setRec3, $i)."t";
 }
 
 while($rec = mysqli_fetch_row($setRec1))  {
@@ -280,7 +275,7 @@ while($rec = mysqli_fetch_row($setRec1))  {
   $setData = str_replace("r", "", $setData);
 
 
-$setCounter1 = mysqli_num_fields($setRec1);
+$setCounter = mysqli_num_fields($setRec);
 
 while($rec = mysqli_fetch_row($setRec2))  {
   $rowLine = '';
@@ -299,7 +294,7 @@ while($rec = mysqli_fetch_row($setRec2))  {
   $setData = str_replace("r", "", $setData);
 
 
-$setCounter2 = mysqli_num_fields($setRec2);
+$setCounter = mysqli_num_fields($setRec);
 
 while($rec = mysqli_fetch_row($setRec3))  {
   $rowLine = '';
@@ -318,7 +313,7 @@ while($rec = mysqli_fetch_row($setRec3))  {
   $setData = str_replace("r", "", $setData);
 
 
-$setCounter3 = mysqli_num_fields($setRec3);
+$setCounter = mysqli_num_fields($setRec);
 //This Header is used to make data download instead of display the data
 
 header("Content-type: application/octet-stream");
