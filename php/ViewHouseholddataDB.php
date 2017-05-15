@@ -53,13 +53,13 @@ echo "Recycle value: $Rwaste <br>";
 echo "Garbage value: $Gwaste <br>";
 echo "ALL(trash) value: $Awaste <br><br>";
 
-if($Account_Num != "")
+if($HID != "")
 {
   $query = "SELECT Account_Num FROM Bins WHERE Account_Num = $HIDU;";
   //Variable to store query result
-
   if($ALL !="ALL")
   {
+    echo "Entered ALL <br>";
     if($WEIGHT ="WEIGHT")
     {
         if($Twaste ="Twaste" && $Rwaste ="Rwaste" )
@@ -255,6 +255,10 @@ if($Account_Num != "")
     }
   }
 }
+
+
+//echo "<br><br>-- PRINTING QUERY --<br><br>$query <br>";
+$connection = include '../php/ConnectDB.php';
      /* execute multi query */
     if (mysqli_multi_query($connection, $query))
     {
