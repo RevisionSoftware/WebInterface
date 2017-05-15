@@ -231,6 +231,104 @@ if($n_rows > 0)
 print "</table>";
 print "</div>";
 ?>
+<form method="post">
+<input type="submit" name="submit" value="Download" class="submit"</input>
+</form>
+<?php
+ if(isset($_POST['submit'])){
+   Download();
+ }
+
+ function Download(){
+
+ $setCounter = 0;
+ $setExcelName = "HouseholdTable";
+ $setSql = "SELECT * FROM Resident;";
+ $setSql2 = "SELECT * FROM Bins";
+ $setSql3 = "SELECT * FROM Pickup";
+ $setRec1 = mysqli_query($setSql1);
+ $setRec2 = mysqli_query($setSql1);
+ $setRec3 = mysqli_query($setSql3);
+ $setCounter1 = mysqli_num_fields($setRec1);
+ $setCounter2 = mysqli_num_fields($setRec2);
+ $setCounter3 = mysqli_num_fields($setRec3);
+
+for ($i = 0; $i < $setCounter1; $i++) {
+    $setMainHeader1 .= mysqli_field_name($setRec1, $i)."t";
+}
+for ($i = 0; $i < $setCounter2; $i++) {
+    $setMainHeader2 .= mysqli_field_name($setRec2, $i)."t";
+}
+for ($i = 0; $i < $setCounter3; $i++) {
+    $setMainHeader3 .= mysqli_field_name($setRec3, $i)."t";
+}
+
+while($rec = mysqli_fetch_row($setRec1))  {
+  $rowLine = '';
+  foreach($rec as $value)       {
+    if(!isset($value) || $value == "")  {
+      $value = "t";
+    }   else  {
+//It escape all the special charactor, quotes from the data.
+      $value = strip_tags(str_replace('"', '""', $value));
+      $value = '"' . $value . '"' . "t";
+    }
+    $rowLine .= $value;
+  }
+  $setData .= trim($rowLine)."n";
+}
+  $setData = str_replace("r", "", $setData);
+
+
+$setCounter1 = mysqli_num_fields($setRec1);
+
+while($rec = mysqli_fetch_row($setRec2))  {
+  $rowLine = '';
+  foreach($rec as $value)       {
+    if(!isset($value) || $value == "")  {
+      $value = "t";
+    }   else  {
+//It escape all the special charactor, quotes from the data.
+      $value = strip_tags(str_replace('"', '""', $value));
+      $value = '"' . $value . '"' . "t";
+    }
+    $rowLine .= $value;
+  }
+  $setData .= trim($rowLine)."n";
+}
+  $setData = str_replace("r", "", $setData);
+
+
+$setCounter2 = mysqli_num_fields($setRec2);
+
+while($rec = mysqli_fetch_row($setRec3))  {
+  $rowLine = '';
+  foreach($rec as $value)       {
+    if(!isset($value) || $value == "")  {
+      $value = "t";
+    }   else  {
+//It escape all the special charactor, quotes from the data.
+      $value = strip_tags(str_replace('"', '""', $value));
+      $value = '"' . $value . '"' . "t";
+    }
+    $rowLine .= $value;
+  }
+  $setData .= trim($rowLine)."n";
+}
+  $setData = str_replace("r", "", $setData);
+
+
+$setCounter3 = mysqli_num_fields($setRec3);
+//This Header is used to make data download instead of display the data
+
+header("Content-type: application/octet-stream");
+header("Content-Disposition: attachment; filename=".$setExcelName."_Report.xls");
+header("Pragma: no-cache");
+header("Expires: 0");
+
+}
+?>
+
 </main>
 </body>
 </html>
