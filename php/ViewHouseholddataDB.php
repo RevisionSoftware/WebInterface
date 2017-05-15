@@ -276,7 +276,7 @@ $connection = include '../php/ConnectDB.php';
             /* print divider */
             if (mysqli_more_results($connection))
             {
-                printf("-----------------\n");
+                printf("---\n");
             }
         } while (mysqli_next_result($connection));
     }
