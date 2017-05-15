@@ -66,8 +66,7 @@ function LoginUser(){
     if(password_verify($Password, $hash))
    {
      session_start();
-     //setting username session
-      $_SESSION["username"] = $Username;
+
       //query to get team type
       $GetType = "SELECT Team_Type FROM User,Team WHERE ((Username = '$Username') AND (User.User_ID=Team.User_ID))";
       $result_type = mysqli_query($connection, $GetType);
@@ -75,6 +74,12 @@ function LoginUser(){
       $TeamType = $typerow['Team_Type'];
       //setting team team type ... admin or standard
       $_SESSION["teamtype"] = $TeamType;
+      if ($TeamType == "") {
+        echo "<p style=\"text-align:center; color:red; width:100%; font-size:12px;\"> You do not have access to the team interface. </p>";
+        exit();
+      }
+      //setting username session
+      $_SESSION["username"] = $Username;
       //sending to homepage on successful login
       header("Location: ../php/HomePage.php");
       exit();
