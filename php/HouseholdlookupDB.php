@@ -242,88 +242,42 @@ print "</div>";
  function Download(){
 
  $setCounter = 0;
- $setExcelName = "HouseholdTable";
- $setSql = "SELECT * FROM Resident;";
- $setSql2 = "SELECT * FROM Bins";
- $setSql3 = "SELECT * FROM Pickup";
- $setRec1 = mysqli_query($setSql1);
- $setRec2 = mysqli_query($setSql1);
- $setRec3 = mysqli_query($setSql3);
- $setCounter = mysqli_num_fields($setRec1);
+ $setExcelName = "BinsTable";
+ $setSql = "SELECT * FROM Resident";
+ $setRec = mysqli_query($setSql);
+ $setCounter = mysqli_num_fields($setRec);
+
+ for ($i = 0; $i < $setCounter; $i++) {
+     $setMainHeader .= mysqli_field_name($setRec, $i)."t";
+ }
+
+ while($rec = mysqli_fetch_row($setRec))  {
+   $rowLine = '';
+   foreach($rec as $value)       {
+     if(!isset($value) || $value == "")  {
+       $value = "t";
+     }   else  {
+ //It escape all the special charactor, quotes from the data.
+       $value = strip_tags(str_replace('"', '""', $value));
+       $value = '"' . $value . '"' . "t";
+     }
+     $rowLine .= $value;
+   }
+   $setData .= trim($rowLine)."n";
+ }
+   $setData = str_replace("r", "", $setData);
 
 
-for ($i = 0; $i < $setCounter; $i++) {
-    $setMainHeader1 .= mysqli_field_name($setRec1, $i)."t";
-    $setMainHeader2 .= mysqli_field_name($setRec2, $i)."t";
-      $setMainHeader3 .= mysqli_field_name($setRec3, $i)."t";
-}
+ $setCounter = mysqli_num_fields($setRec);
+ //This Header is used to make data download instead of display the data
 
-while($rec = mysqli_fetch_row($setRec1))  {
-  $rowLine = '';
-  foreach($rec as $value)       {
-    if(!isset($value) || $value == "")  {
-      $value = "t";
-    }   else  {
-//It escape all the special charactor, quotes from the data.
-      $value = strip_tags(str_replace('"', '""', $value));
-      $value = '"' . $value . '"' . "t";
-    }
-    $rowLine .= $value;
-  }
-  $setData .= trim($rowLine)."n";
-}
-  $setData = str_replace("r", "", $setData);
+ header("Content-type: application/octet-stream");
+ header("Content-Disposition: attachment; filename=".$setExcelName."_Report.xls");
+ header("Pragma: no-cache");
+ header("Expires: 0");
 
-
-$setCounter = mysqli_num_fields($setRec);
-
-while($rec = mysqli_fetch_row($setRec2))  {
-  $rowLine = '';
-  foreach($rec as $value)       {
-    if(!isset($value) || $value == "")  {
-      $value = "t";
-    }   else  {
-//It escape all the special charactor, quotes from the data.
-      $value = strip_tags(str_replace('"', '""', $value));
-      $value = '"' . $value . '"' . "t";
-    }
-    $rowLine .= $value;
-  }
-  $setData .= trim($rowLine)."n";
-}
-  $setData = str_replace("r", "", $setData);
-
-
-$setCounter = mysqli_num_fields($setRec);
-
-while($rec = mysqli_fetch_row($setRec3))  {
-  $rowLine = '';
-  foreach($rec as $value)       {
-    if(!isset($value) || $value == "")  {
-      $value = "t";
-    }   else  {
-//It escape all the special charactor, quotes from the data.
-      $value = strip_tags(str_replace('"', '""', $value));
-      $value = '"' . $value . '"' . "t";
-    }
-    $rowLine .= $value;
-  }
-  $setData .= trim($rowLine)."n";
-}
-  $setData = str_replace("r", "", $setData);
-
-
-$setCounter = mysqli_num_fields($setRec);
-//This Header is used to make data download instead of display the data
-
-header("Content-type: application/octet-stream");
-header("Content-Disposition: attachment; filename=".$setExcelName."_Report.xls");
-header("Pragma: no-cache");
-header("Expires: 0");
-
-}
-?>
-
+ }
+ ?>
 </main>
 </body>
 </html>

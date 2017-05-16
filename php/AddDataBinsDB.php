@@ -26,6 +26,10 @@ $t1ID = $_POST['RFID'];
 $t1ID = stripcslashes($t1ID);
 $t1IDU = htmlspecialchars($t1ID);
 
+$t5ID = $_POST['Pickup_ID'];
+$t5ID = stripcslashes($t5ID);
+$t5IDU = htmlspecialchars($t5ID);
+
 $t2ID = $_POST['Account_Num'];
 $t2ID = stripcslashes($t2ID);
 $t2IDU = htmlspecialchars($t2ID);
@@ -38,7 +42,7 @@ $t4ID = $_POST['Bin_Type'];
 $t4ID = stripcslashes($t4ID);
 $t4IDU = htmlspecialchars($t4ID);
 
-$query = "INSERT INTO Bins(RFID_Tag,Account_Num,Resident_ID,Bin_Type) VALUES('$t1IDU','$t2IDU','$t3IDU','$t4IDU')";
+$query = "INSERT INTO Bins(RFID_Tag,Pickup_ID,Account_Num,Resident_ID,Bin_Type) VALUES('$t1IDU','$t5IDU','$t2IDU','$t3IDU','$t4IDU')";
 
 if(mysqli_query($connection, $query)){
   echo "New Record has been added.";
