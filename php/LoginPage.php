@@ -68,7 +68,7 @@ function LoginUser(){
      session_start();
 
       //query to get team type
-      $GetType = "SELECT Team_Type FROM User,Team WHERE ((Username = '$Username') AND (User.User_ID=Team.User_ID))";
+      $GetType = "SELECT Team_Type FROM User,Team WHERE ((Username = '$Username') AND (User_ID=Team.User_ID))";
       $result_type = mysqli_query($connection, $GetType);
       $typerow = mysqli_fetch_assoc($result_type);
       $TeamType = $typerow['Team_Type'];
