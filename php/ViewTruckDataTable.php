@@ -1,11 +1,11 @@
 <?php
 session_start();
 //if not logged in, redirect to LoginPage
-/*
+
 if(!isset($_SESSION['username'])){
    header("Location: ../php/LoginPage.php");
 }
-*/
+
 ?>
 <!DOCTYPE html>
 <!-- Created by: Revision Software -->
@@ -43,8 +43,10 @@ if(!isset($_SESSION['username'])){
 <form>
   <div class="btn-group">
  <input type="button" onclick="location.href='../php/ViewTruckDataDB.php'" value="TRUCK TABLE"><br><br>
+ <?php if($_SESSION["teamtype"] == "Admin"){   ?>
  <input type="button" onclick="location.href='../php/AddDataTruck.php'" value="ADD TRUCK DATA"><br><br>
  <input type="button" onclick="location.href='../php/DeleteDataTruck.php'" value="DELETE TRUCK DATA"><br><br>
+ <?php } ?>
 </div>
 
     </form>

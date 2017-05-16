@@ -1,11 +1,11 @@
 <?php
 session_start();
 //if not logged in, redirect to LoginPage
-/*
+
 if(!isset($_SESSION['username'])){
    header("Location: ../php/LoginPage.php");
 }
-*/
+
 ?>
 <!DOCTYPE html>
 <!-- Created by: Revision Software -->
@@ -42,8 +42,10 @@ if(!isset($_SESSION['username'])){
 <form>
   <div class="btn-group">
  <input type="button" onclick="location.href='../php/ViewBinsDataDB.php'" value="BINS TABLE"><br><br>
+ <?php if($_SESSION["teamtype"] == "Admin"){   ?>
  <input type="button" onclick="location.href='../php/AddDataBins.php'" value="ADD DATA BINS"><br><br>
  <input type="button" onclick="location.href='../php/DeleteDataBins.php'" value="DELETE DATA BINS"><br><br>
+ <?php } ?>
 </div>
     </form>
       </div>

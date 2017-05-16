@@ -1,11 +1,13 @@
 <?php
 session_start();
 //if not logged in, redirect to LoginPage
-/*
 if(!isset($_SESSION['username'])){
    header("Location: ../php/LoginPage.php");
 }
-*/
+
+if($_SESSION["teamtype"] != "Admin"){
+header("Location: ../php/HomePage.php");
+}
 ?>
 <!DOCTYPE html>
 <!--ADD Bins Info Form  -->
@@ -20,9 +22,6 @@ if(!isset($_SESSION['username'])){
   $connection = include '../php/ConnectDB.php';
 
 // Get the itemID entered by the user in the ID box
-$t1ID = $_POST['Pickup_ID'];
-$t1ID = stripcslashes($t1ID);
-$t1IDU = htmlspecialchars($t1ID);
 
 $t2ID = $_POST['Address'];
 $t2ID = stripcslashes($t2ID);
@@ -88,8 +87,8 @@ $t17ID = $_POST['RFID_Tag'];
 $t17ID = stripcslashes($t17ID);
 $t17IDU = htmlspecialchars($t17ID);
 
-$query = "INSERT INTO Pickup(Pickup_ID,Address,City,State,Zip,Weight,Start_Time,Stop_Time,Date_Time,Pickup_Type,Longitude,Latitude,N_Code,Route_Num,Account_Num,Resident_ID,RFID_Tag)
-VALUES('$t1IDU','$t2IDU','$t3IDU','$t4IDU','$t5IDU','$t6IDU','$t7IDU','$t8IDU','$t9IDU','$t10IDU','$t11IDU','$t12IDU','$t13IDU','$t14IDU','$t15IDU','$t16IDU','$t17IDU')";
+$query = "INSERT INTO Pickup(Address,City,State,Zip,Weight,Start_Time,Stop_Time,Date_Time,Pickup_Type,Longitude,Latitude,N_Code,Route_Num,Account_Num,Resident_ID,RFID_Tag)
+VALUES($t2IDU','$t3IDU','$t4IDU','$t5IDU','$t6IDU','$t7IDU','$t8IDU','$t9IDU','$t10IDU','$t11IDU','$t12IDU','$t13IDU','$t14IDU','$t15IDU','$t16IDU','$t17IDU')";
 
 if(mysqli_query($connection, $query)){
   echo "New Record has been added.";

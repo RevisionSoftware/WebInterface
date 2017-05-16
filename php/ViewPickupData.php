@@ -1,11 +1,10 @@
 <?php
 session_start();
 //if not logged in, redirect to LoginPage
-/*
 if(!isset($_SESSION['username'])){
    header("Location: ../php/LoginPage.php");
 }
-*/
+
 ?>
 <!DOCTYPE html>
 <!-- Created by: Revision Software -->
@@ -43,8 +42,10 @@ if(!isset($_SESSION['username'])){
 <form>
   <div class="btn-group">
  <input type="button" onclick="location.href='../php/ViewPickupDataDB.php'" value="PICKUP TABLE"><br><br>
+ <?php if($_SESSION["teamtype"] == "Admin"){   ?>
  <input type="button" onclick="location.href='../php/AddDataPickup.php'" value="ADD DATA PICKUP"><br><br>
  <input type="button" onclick="location.href='../php/DeleteDataPickup.php'" value="DELETE DATA PICKUP"><br><br>
+ <?php } ?>
 </div>
 
     </form>

@@ -1,15 +1,14 @@
 <?php
 session_start();
 //if not logged in, redirect to LoginPage
-/* if(!isset($_SESSION['username'])){
-//   header("Location: ../php/LoginPage.php");
-else{ */
+if(!isset($_SESSION['username'])){
+ header("Location: ../php/LoginPage.php");
+}
 //if not admin, do not allow on this page
 if($_SESSION["teamtype"] != "Admin"){
 header("Location: ../php/HomePage.php");
 }
-//}
-//}
+
 
 $connection = include '../php/ConnectDB.php';
 ?>

@@ -1,11 +1,13 @@
 <?php
 session_start();
 //if not logged in, redirect to LoginPage
-/*
 if(!isset($_SESSION['username'])){
    header("Location: ../php/LoginPage.php");
 }
-*/
+
+if($_SESSION["teamtype"] != "Admin"){
+header("Location: ../php/HomePage.php");
+}
 ?>
 <!DOCTYPE html>
 <!-- Created by: Revision Software -->
@@ -41,9 +43,6 @@ if(!isset($_SESSION['username'])){
   <h1> ADD Data Components here </h1>
     <form id = "ID" action = "AddDataTruckDB.php" method = "post">
   <fieldset><legend>Product Information</legend>
-  <label for= "Truck_ID">Truck_ID:</label>
-  <input type="text" name="Truck_ID" id="Truck_ID" size="20" maxlength= "30" placeholder="Enter Truck_ID" autofocus required> <br>
-  <br>
   <label for="Route_Num">Route_Num: </label>
   <input type="text" name="Route_Num" id="Route_Num" size="15" maxlength="10" placeholder="Enter Route_Num" required> <br>
   <br>
