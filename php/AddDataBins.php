@@ -46,6 +46,9 @@ header("Location: ../php/HomePage.php");
   <label for= "RFID">RFID_TAG:</label>
   <input type="text" name="RFID" id="RFID" size="20" maxlength= "30" placeholder="Enter RFID" autofocus required> <br>
   <br>
+  <label for= "Pickup_ID">Pickup_ID_TAG:</label>
+  <input type="text" name="Pickup_ID" id="Pickup_ID" size="20" maxlength= "30" placeholder="Enter Pickup_ID" autofocus required> <br>
+  <br>
   <label for="Account_Num">Account_Num: </label>
   <input type="text" name="Account_Num" id="Account_Num" size="15" maxlength="10" placeholder="Enter Account_Num" required> <br>
   <br>
