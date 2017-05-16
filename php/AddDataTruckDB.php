@@ -1,11 +1,13 @@
 <?php
 session_start();
 //if not logged in, redirect to LoginPage
-/*
 if(!isset($_SESSION['username'])){
    header("Location: ../php/LoginPage.php");
 }
-*/
+
+if($_SESSION["teamtype"] != "Admin"){
+header("Location: ../php/HomePage.php");
+}
 ?>
 <!DOCTYPE html>
 <!--ADD Bins Info Form  -->
@@ -20,9 +22,6 @@ if(!isset($_SESSION['username'])){
   $connection = include '../php/ConnectDB.php';
 
 // Get the itemID entered by the user in the ID box
-$t1ID = $_POST['Truck_ID'];
-$t1ID = stripcslashes($t1ID);
-$t1IDU = htmlspecialchars($t1ID);
 
 $t2ID = $_POST['Route_Num'];
 $t2ID = stripcslashes($t2ID);
@@ -40,17 +39,17 @@ $t5ID = $_POST['License_Plate'];
 $t5ID = stripcslashes($t5ID);
 $t5IDU = htmlspecialchars($t5ID);
 
-$query = "INSERT INTO Truck(Truck_ID,Route_Num,Employee_Number,Truck_Type,License_Plate)
-VALUES('$t1IDU','$t2IDU','$t3IDU','$t4IDU','$t5IDU')";
+$query = "INSERT INTO Truck(Route_Num,Employee_Number,Truck_Type,License_Plate)
+VALUES($t2IDU','$t3IDU','$t4IDU','$t5IDU')";
 
 if(mysqli_query($connection, $query)){
   echo "New Record has been added.";
  } else{
-  echo "ERROR: Could was not able to execute record addition." . mysqli_error($link);
+  echo "ERROR: Could was not able to execute record addition." . mysqli_error($connection);
  }
 
 // close connection
-mysqli_close($link);
+mysqli_close($connection);
 ?>
 </body>
 </html>

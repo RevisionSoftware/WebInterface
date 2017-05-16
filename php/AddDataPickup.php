@@ -1,11 +1,13 @@
 <?php
 session_start();
 //if not logged in, redirect to LoginPage
-/*
 if(!isset($_SESSION['username'])){
    header("Location: ../php/LoginPage.php");
 }
-*/
+
+if($_SESSION["teamtype"] != "Admin"){
+header("Location: ../php/HomePage.php");
+}
 ?>
 <!DOCTYPE html>
 <!-- Created by: Revision Software -->
@@ -42,9 +44,6 @@ if(!isset($_SESSION['username'])){
     <form id = "ID" action = "AddDataPickupDB.php" method = "post">
 
   <fieldset><legend>Product Information</legend>
-    <label for= "Pickup_ID">Pickup_ID:</label>
-    <input type="text" name="Pickup_ID" id="Pickup_ID" size="20" maxlength= "30" placeholder="Enter Pickup_ID" autofocus required> <br>
-    <br>
   <label for= "Address">Address:</label>
   <input type="text" name="Address" id="Address" size="20" maxlength= "30" placeholder="Enter Address" autofocus required> <br>
   <br>

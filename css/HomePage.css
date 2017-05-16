@@ -51,6 +51,6 @@ header li {
    padding-right: 15px;
 }
 /* End Header CSS */
-h1{
+h1, h2{
   font-family: 'Karma', serif;
 }
