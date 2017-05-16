@@ -38,7 +38,7 @@ if(!isset($_SESSION['username'])){
 <main>
   <div class="center">
   <!-- Main Page HTML goes here -->
-    <?php if($_SESSION["teamtype"] == "Admin"){ echo '<h1> Adminstrator Homepage </h1><br><h2> Tables: Add/Delete </h2>'; } ?>
+    <?php if($_SESSION["teamtype"] == "Admin"){ echo '<h1> Administrator Homepage </h1><br><h2> Tables: Add/Delete </h2>'; } ?>
     <?php if($_SESSION["teamtype"] == "Standard"){ echo '<h1> Standard Homepage </h1><br><h2> View Tables </h2>'; } ?>
 
   <div class="btn-group">
