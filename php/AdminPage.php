@@ -47,7 +47,7 @@ $connection = include '../php/ConnectDB.php';
   <h2>Team Members<h2>
 <?php
 
-$sql = "SELECT Username AS 'User', First_Name AS 'First Name', Last_Name AS 'Last Name', Team_Type AS Type, User.User_ID AS 'ID' FROM User, Team WHERE (User.User_ID=Team.User_ID) ORDER BY ID ASC";
+$sql = "SELECT Username AS 'User', First_Name AS 'First Name', Last_Name AS 'Last Name', Team_Type AS Type, Team.User_ID AS 'ID' FROM User, Team WHERE (User_ID=Team.User_ID) ORDER BY ID ASC";
 $result = mysqli_query($connection, $sql);
 
 
