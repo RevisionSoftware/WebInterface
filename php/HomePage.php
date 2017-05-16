@@ -1,11 +1,11 @@
 <?php
 session_start();
 //if not logged in, redirect to LoginPage
-/*
+
 if(!isset($_SESSION['username'])){
    header("Location: ../php/LoginPage.php");
 }
-*/
+
 ?>
 <!DOCTYPE html>
 <!-- Created by: Revision Software -->
@@ -38,7 +38,9 @@ if(!isset($_SESSION['username'])){
 <main>
   <div class="center">
   <!-- Main Page HTML goes here -->
-  <h1> Tables: ADD/DELETE </h1>
+    <?php if($_SESSION["teamtype"] == "Admin"){ echo '<h1> Adminstrator Homepage </h1><br><h2> Tables: Add/Delete </h2>'; } ?>
+    <?php if($_SESSION["teamtype"] == "Standard"){ echo '<h1> Standard Homepage </h1><br><h2> View Tables </h2>'; } ?>
+
   <div class="btn-group">
   <input type="button" onclick="location.href='../php/ViewCalibrationData.php'" value="CALIBRATION DATA"><br><br>
   <input type="button" onclick="location.href='../php/ViewBinsData.php'" value="BINS DATA"><br><br>
