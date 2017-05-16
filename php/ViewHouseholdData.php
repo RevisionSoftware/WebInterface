@@ -73,10 +73,15 @@ if(!isset($_SESSION['username'])){
                     </ul>
             </div>
             <!-- Date Range  -->
-
-            <input type="submit" value="Submit"> </br>
-        </div>
-      </form>
+            <div class = "dateRange">
+            <h3> <u>DATE RANGE: </u></h3>
+         		<ul>
+         			<li><input type="checkbox" name="date" value="2">  ALL <br>   	</li>
+         			 <li>&nbsp;&nbsp; &nbsp;&nbsp;From : <input type="date" name="startDate" max="1979-12-31"> To :
+         			<input type="date" name="endDate" min="2000-01-02"></br>
+         			<input type="submit"> </br></li>
+         	</form>
+            </div>
         <div class = "bottomBar">
         </br></br></br></br>
         </br></br></br></br>

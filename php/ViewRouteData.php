@@ -45,48 +45,39 @@ if(!isset($_SESSION['username'])){
 	   <!-- Account Num  -->
    <div class = "AccNum">
    <h3> <u>Search by: </u></h3>
-		<form action="/action_page.php">
+		<form id = "ID" action = "ViewRoutedatasDB.php" method = "post">
 ROUTE NUMBER: <input type="text" name="FirstName" value=""><br>
-
-</form>
-
 
    </div>
 <!-- Route Type Checkboxes -->
   <div class = "routeType">
   <h3> <u>VIEW HOUSEHOLD: </u></h3>
-	<form action="">
 		<ul>
-      <li><label><input type="checkbox" name="BIN" value="1" /> BIN IN/OUT </label></li>
-      <li><label><input type="checkbox" name="WEIGHT" value="2" /> WEIGHT </label></li>
-      <li><label><input type="checkbox" name="PERCENTAGE" value="3" /> PERCENTAGE </label></li>
-      <li><label><input type="checkbox" name="ALL" value="4" /> ALL </label></li>
+      <li><label><input type="checkbox" name="BIN" value="BIN" /> BIN IN/OUT </label></li>
+      <li><label><input type="checkbox" name="WEIGHT" value="WEIGHT" /> WEIGHT </label></li>
+      <li><label><input type="checkbox" name="PERCENTAGE" value="PERCENTAGE" /> PERCENTAGE </label></li>
+      <li><label><input type="checkbox" name="ALL" value="ALL" /> ALL </label></li>
 		</ul>
-
-	</form>
    </div>
 
    <!-- Waste Type Checkboxes -->
    <div class = "wasteType">
   <h3> <u>WASTE TYPE: </u></h3>
-	<form action="">
 		<ul>
-      <li><label><input type="checkbox" name="Twaste" value="1"/>  Trash </label></li>
-      <li><label><input type="checkbox" name="Rwaste" value="2"/>  Recycling </label></li>
-      <li><label><input type="checkbox" name="Gwaste" value="3"/>  Green Waste </label></li>
-      <li><label><input type="checkbox" name="Awaste" value="4"/>  ALL </label></li>
+      <li><label><input type="checkbox" name="Twaste" value="Twaste"/>  Trash </label></li>
+      <li><label><input type="checkbox" name="Rwaste" value="Rwaste"/>  Recycling </label></li>
+      <li><label><input type="checkbox" name="Gwaste" value="Gwaste"/>  Green Waste </label></li>
+      <li><label><input type="checkbox" name="Awaste" value="Awaste"/>  ALL </label></li>
 		</ul>
-	</form>
    </div>
 
 	   <!-- Date Range  -->
    <div class = "dateRange">
    <h3> <u>DATE RANGE: </u></h3>
-		<form action="">
 		<ul>
 			<li><input type="checkbox" name="date" value="2">  ALL <br>   	</li>
 			 <li>&nbsp;&nbsp; &nbsp;&nbsp;From : <input type="date" name="startDate" max="1979-12-31"> To :
-			<input type="date" name="endDate" min="2000-01-02">
+			<input type="date" name="endDate" min="2000-01-02"></br>
 			<input type="submit"> </br></li>
 	</form>
    </div>
