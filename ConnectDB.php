@@ -1,4 +1,4 @@
-<?php include "../inc/dbinfo.inc"; ?>
+
 <?php
 
     // Web Server connection info
