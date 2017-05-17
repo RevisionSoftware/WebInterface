@@ -46,7 +46,7 @@ if(!isset($_SESSION['username'])){
    <div class = "AccNum">
    <h3> <u>Search by: </u></h3>
 		<form id = "ID" action = "HouseholdlookupDB.php" method = "post">
-Account Number: <input type="text" name="Account_Num" id = "Account_Num" value=""><br>
+Resident ID: <input type="text" name="Resident_ID" id = "Resident_ID" value=""><br>
 <input type="submit" value="Submit">
 </form>
    </div>

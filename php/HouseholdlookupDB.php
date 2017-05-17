@@ -41,12 +41,12 @@ if (!$connection) // Check connection if statement
   {
     print "*****CONNECTION TO DATABASE FAILED***** ";exit;
   }
-  $HID = $_POST['Account_Num'];
+  $HID = $_POST['Resident_ID'];
   $HID = stripcslashes($HID);
   $HIDU = htmlspecialchars($HID);
 
 //query to select info from Items
-$query = "SELECT * FROM Resident WHERE Account_Num = '$HIDU'";
+$query = "SELECT * FROM Resident WHERE Resident_ID = '$HIDU'";
 
 //Variable to store query result
 $Qresult = mysqli_query($connection, $query);
@@ -107,7 +107,7 @@ if($n_rows > 0)
 // Close table
 print "</table>";
 print "</div>";
-$query = "SELECT * FROM Bins WHERE Account_Num = '$HIDU'";
+$query = "SELECT * FROM Bins WHERE Resident_ID = '$HIDU'";
 
 //Variable to store query result
 $Qresult = mysqli_query($connection, $query);
@@ -169,7 +169,7 @@ if($n_rows > 0)
 print "</table>";
 print "</div>";
 
-$query = "SELECT * FROM Pickup WHERE Account_Num = '$HIDU'";
+$query = "SELECT * FROM Pickup WHERE Resident_ID = '$HIDU'";
 
 //Variable to store query result
 $Qresult = mysqli_query($connection, $query);
